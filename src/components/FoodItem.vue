@@ -4,7 +4,7 @@
         <p> 
             <input type="checkbox" v-on:change="markComplete">
             {{food.id}} {{ food.name }} {{ food.price }}
-            <button class="del">X</button> 
+            <button @click="$emit('del-food', food.id)" class="del">X</button> 
         </p>
     </div>
 </template>
