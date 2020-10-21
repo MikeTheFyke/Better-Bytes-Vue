@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form>
+        <form @submit="addFood"> 
             <input type="text" name="title" placeholder="Add Food..." class="foodInput">
             <input type="submit" value="Submit" class="btn" >
         </form>
