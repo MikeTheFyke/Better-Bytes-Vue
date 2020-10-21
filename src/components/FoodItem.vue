@@ -3,7 +3,7 @@
     <div class="food-item" v-bind:class="{'is-complete':food.completed}">
         <p> 
             <input type="checkbox" v-on:change="markComplete">
-            {{food.id}} {{ food.name }} {{ food.price }}
+            {{ food.name }} {{ food.price }}
             <button @click="$emit('del-food', food.id)" class="del">X</button> 
         </p>
     </div>

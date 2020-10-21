@@ -1,7 +1,7 @@
 <template>
     <div>
         <form @submit.prevent="addFood"> 
-            <input type="text" v-model="name" name="name" placeholder="Add Food..." class="foodInput">
+            <input type="text" v-model="name" name="name" placeholder="Add Food..." class="foodInput"  autocomplete="off">
             <input type="submit" value="Submit" class="btn" >
         </form>
     </div>    
