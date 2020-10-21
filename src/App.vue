@@ -29,24 +29,24 @@ export default {
     return {
       // created a object of arrays for food items
       foods: [
-        {
-          id: 1,
-          name: "Tomatoes",
-          price: "$2.39",
-          completed: false
-        },
-                {
-          id: 2,
-          name: "Onions",
-          price: "$1.39",
-          completed: false
-        },
-                {
-          id: 3,
-          name: "Steak",
-          price: "$10.98",
-          completed: false
-        }
+        // {
+        //   id: 1,
+        //   name: "Tomatoes",
+        //   price: "$2.39",
+        //   completed: false
+        // },
+        //         {
+        //   id: 2,
+        //   name: "Onions",
+        //   price: "$1.39",
+        //   completed: false
+        // },
+        //         {
+        //   id: 3,
+        //   name: "Steak",
+        //   price: "$10.98",
+        //   completed: false
+        // }
       ]
     }
   },
