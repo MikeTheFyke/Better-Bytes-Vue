@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <AddFood />
+    <AddFood v-on:add-food="addFood"/>
     <!-- new foods component -->
     <!-- used v-bind to pass foods data up to Foods component as a prop. -->
     <Foods v-bind:foods="foods" v-on:del-food="deleteFood" /> 
@@ -54,6 +54,10 @@ export default {
     deleteFood(id){
       // filter and keep any id that doesnt match id that is passed to this method.
       this.foods = this.foods.filter(food => food.id !== id);
+    },
+    addFood(newFood){
+      // using a spread operator we will add food to list of foods
+      this.foods = [...this.foods, newFood];
     }
   }
 }

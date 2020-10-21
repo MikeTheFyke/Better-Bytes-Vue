@@ -1,14 +1,14 @@
 <template>
     <div>
-        <form @submit="addFood"> 
-            <input type="text" name="title" placeholder="Add Food..." class="foodInput">
+        <form @submit.prevent="addFood"> 
+            <input type="text" v-model="name" name="name" placeholder="Add Food..." class="foodInput">
             <input type="submit" value="Submit" class="btn" >
         </form>
     </div>    
 </template>
 
 <script>
-import uuid from 'uuid';
+import { v4 } from 'uuid';
 export default {
     name: "AddFood",
     data(){
@@ -20,12 +20,15 @@ export default {
         addFood() {
             // constructing newly added food.
             const newFood = {
-                id: uuid.v4(),
+                id: v4(),
                 name: this.name,
+                price: "$0.00",
                 completed: false
             }
             // send up to parent
             this.$emit('add-food', newFood);
+
+            this.name = '';
         }
     }
 }
