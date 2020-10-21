@@ -11,7 +11,13 @@
 <script>
 export default {
     name: "FoodItem",
-    props: ["food"]    
+    props: ["food"],
+    methods: {
+        // Added markComplete method for checkbox element.
+        markComplete() {
+            this.food.completed = !this.food.completed;
+        }
+    }    
 }
 </script>
 
