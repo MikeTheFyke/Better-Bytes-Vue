@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    {{ msg }}
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
@@ -10,7 +11,13 @@
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    // HelloWorld
+  },
+    // Added data method
+  data() {
+    return {
+      msg: 'Hello'
+    }
   }
 }
 </script>
