@@ -47,7 +47,7 @@ export default {
   methods: {
     deleteFood(id){
       // filter and keep any id that doesnt match id that is passed to this method.
-      this.food = this.foods.filter(food => food.id !== id);
+      this.foods = this.foods.filter(food => food.id !== id);
     }
   }
 }
