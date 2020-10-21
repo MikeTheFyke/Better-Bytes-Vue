@@ -27,7 +27,7 @@ export default {
           id: 1,
           name: "Tomatoes",
           price: "$2.39",
-          completed: false
+          completed: true
         },
                 {
           id: 2,

@@ -1,5 +1,6 @@
 <template>
-    <div class="food-item">
+    <!-- add v-bind:class is complete and then conditional food.completed to add cross out style if completed. -->
+    <div class="food-item" v-bind:class="{'is-complete':food.completed}">
         <p> {{food.id}} {{ food.name }} {{ food.price }} </p>
     </div>
 </template>
