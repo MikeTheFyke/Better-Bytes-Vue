@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div v-for="food in foods">
-            <h3>{{ food.name }}</h3>
+        <div v-bind:key="food.id" v-for="food in foods">
+            <h3> {{food.id}} {{ food.name }} {{ food.price }}</h3>
         </div>
     </div>
 </template>
