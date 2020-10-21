@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header />
     <!-- new foods component -->
     <!-- used v-bind to pass foods data up to Foods component as a prop. -->
     <Foods v-bind:foods="foods" v-on:del-food="deleteFood" /> 
@@ -10,12 +11,14 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 // import neew foods component.
-import Foods from './components/Foods.vue'
+import Foods from './components/Foods'
+import Header from './components/layout/Header'
 
 export default {
   name: 'App',
   components: {
     // HelloWorld
+    Header,
     Foods
   },
     // Added data method
