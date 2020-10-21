@@ -8,8 +8,26 @@
 </template>
 
 <script>
+import uuid from 'uuid';
 export default {
-    name: "AddFood"
+    name: "AddFood",
+    data(){
+        return{
+            name: ''
+        }
+    },
+    methods: {
+        addFood() {
+            // constructing newly added food.
+            const newFood = {
+                id: uuid.v4(),
+                name: this.name,
+                completed: false
+            }
+            // send up to parent
+            this.$emit('add-food', newFood);
+        }
+    }
 }
 </script>
 
