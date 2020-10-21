@@ -2,7 +2,7 @@
   <div id="app">
     <!-- new foods component -->
     <!-- used v-bind to pass foods data up to Foods component as a prop. -->
-    <Foods v-bind:foods="foods" /> 
+    <Foods v-bind:foods="foods" v-on:del-food="deleteFood" /> 
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
@@ -42,6 +42,12 @@ export default {
           completed: false
         }
       ]
+    }
+  },
+  methods: {
+    deleteFood(id){
+      // filter and keep any id that doesnt match id that is passed to this method.
+      this.food = this.foods.filter(food => food.id !== id);
     }
   }
 }

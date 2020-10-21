@@ -2,7 +2,7 @@
     <div>
         <div v-bind:key="food.id" v-for="food in foods">
             <!-- <h3> {{food.id}} {{ food.name }} {{ food.price }}</h3> -->
-            <FoodItem v-bind:food="food" />
+            <FoodItem v-bind:food="food" v-on:del-food="$emit('del-food', food.id)" />
         </div>
     </div>
 </template>
