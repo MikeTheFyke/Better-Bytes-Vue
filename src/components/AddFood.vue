@@ -43,6 +43,7 @@ form{
 .foodInput{
     flex: 10;
     padding: 5px;
+    outline: none;
 }
 
 .btn{
