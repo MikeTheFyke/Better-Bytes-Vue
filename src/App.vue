@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    {{ msg }}
+    {{ foods }}
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
@@ -16,7 +16,24 @@ export default {
     // Added data method
   data() {
     return {
-      msg: 'Hello'
+      // created a object of arrays for food items
+      foods: [
+        {
+          id: 1,
+          title: "Tomatoes",
+          completed: false
+        },
+                {
+          id: 2,
+          title: "Onions",
+          completed: false
+        },
+                {
+          id: 3,
+          title: "Steak",
+          completed: false
+        }
+      ]
     }
   }
 }
