@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <!-- new foods component -->
-    <Foods /> 
+    <!-- used v-bind to pass foods data up to Foods component as a prop. -->
+    <Foods v-bind:foods="foods" /> 
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
