@@ -1,17 +1,21 @@
 <template>
   <div id="app">
-    {{ foods }}
+    <!-- new foods component -->
+    <Foods /> 
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
+// import neew foods component.
+import Foods from './components/Foods.vue'
 
 export default {
   name: 'App',
   components: {
     // HelloWorld
+    Foods
   },
     // Added data method
   data() {
