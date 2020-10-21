@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
-    
+    <!-- created new element to be displayed -->
+    <h1> Hello Vue-rs</h1> 
   </div>
 </template>
 
