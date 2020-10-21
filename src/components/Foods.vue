@@ -1,12 +1,15 @@
 <template>
     <div>
-        <h1> Foods </h1>
+        <div v-for="food in foods">
+            <h3>{{ food.name }}</h3>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: "Foods"
+    name: "Foods",
+    props: ["foods"]
 }
 </script>
 
