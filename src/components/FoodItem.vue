@@ -1,7 +1,10 @@
 <template>
-    <!-- add v-bind:class is complete and then conditional food.completed to add cross out style if completed. -->
+    <!-- add v-bind:class is complete and then conditional food.completed to add class style if completed. -->
     <div class="food-item" v-bind:class="{'is-complete':food.completed}">
-        <p> {{food.id}} {{ food.name }} {{ food.price }} </p>
+        <p> 
+            <input type="checkbox" v-on:change="markComplete">
+            {{food.id}} {{ food.name }} {{ food.price }} 
+        </p>
     </div>
 </template>
 
