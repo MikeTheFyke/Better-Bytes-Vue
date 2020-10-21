@@ -20,17 +20,17 @@ export default {
       foods: [
         {
           id: 1,
-          title: "Tomatoes",
+          name: "Tomatoes",
           completed: false
         },
                 {
           id: 2,
-          title: "Onions",
+          name: "Onions",
           completed: false
         },
                 {
           id: 3,
-          title: "Steak",
+          name: "Steak",
           completed: false
         }
       ]
