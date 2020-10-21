@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <p> {{food.name}} </p>
+    <div class="food-item">
+        <p> {{food.id}} {{ food.name }} {{ food.price }} </p>
     </div>
 </template>
 
