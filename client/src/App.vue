@@ -68,7 +68,9 @@ export default {
       // filter and keep any id that doesnt match id that is passed to this method.
       this.foods = this.foods.filter(food => food.id !== id);
     },
-    addFood(newFood){
+    async addFood(newFood){
+      await PostService.insertPost(this.text);
+      this.posts = await PostService.getPosts();
       // using a spread operator we will add food to list of foods
       this.foods = [...this.foods, newFood];
     }
