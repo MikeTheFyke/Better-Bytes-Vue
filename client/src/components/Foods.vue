@@ -1,5 +1,3 @@
-Foods.vue
-
 <template>
     <div>
         <div v-bind:key="food.id" v-for="food in foods">

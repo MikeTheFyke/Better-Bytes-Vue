@@ -1,5 +1,3 @@
-App.vue
-
 <template>
   <div id="app">
     <Header />
@@ -18,7 +16,7 @@ import Foods from './components/Foods'
 import AddFood from './components/AddFood'
 import Header from './components/layout/Header'
 
-import PostService from './PostService.js'
+// import PostService from './PostService.js'
 
 export default {
   name: 'App',
@@ -52,28 +50,30 @@ export default {
         //   completed: false
         // }
       ],
-      error: '',
-      text: ''
+      // error: '',
+      // name: '',
+      // price: '',
+      // completed: false
     }
   },
-  async created () {
-    try {
-      this.posts = await PostService.getPosts();
-    } catch(err){
-      this.error = err.message;
-    }
-  },
+  // async created () {
+  //   try {
+  //     this.posts = await PostService.getPosts();
+  //   } catch(err){
+  //     this.error = err.message;
+  //   }
+  // },
   methods: {
     deleteFood(id){
       // filter and keep any id that doesnt match id that is passed to this method.
       this.foods = this.foods.filter(food => food.id !== id);
     },
-    async addFood(newFood){
-      await PostService.insertPost(this.text);
-      this.posts = await PostService.getPosts();
-      // using a spread operator we will add food to list of foods
-      this.foods = [...this.foods, newFood];
-    }
+    // addFood(newFood){
+    //   // await PostService.insertPost(this.name);
+    //   // this.posts = await PostService.getPosts();
+    //   // using a spread operator we will add food to list of foods
+    //   this.foods = [...this.foods, newFood];
+    // }
   }
 }
 </script>

@@ -13,7 +13,9 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     const posts = await loadPostsCollection();
     await posts.insertOne({
-        text: req.body.text,
+        name: req.body.name,
+        price: "$0.00",
+        completed: false,
         createdAt: new Date()
     });
     res.status(201).send();

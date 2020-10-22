@@ -1,5 +1,3 @@
-FoodItem.vue
-
 <template>
     <!-- add v-bind:class is complete and then conditional food.completed to add class style if completed. -->
     <div class="food-item" v-bind:class="{'is-complete':food.completed}">

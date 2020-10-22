@@ -1,5 +1,3 @@
-AddFood.vue
-
 <template>
     <div>
         <form @submit.prevent="addFood"> 
@@ -10,19 +8,32 @@ AddFood.vue
 </template>
 
 <script>
-import { v4 } from 'uuid';
+import PostService from '../PostService'
+
 export default {
     name: "AddFood",
     data(){
         return{
-            name: ''
+            posts: [],
+            name: '',
+            price: '$0.00',
+            completed: false
+        }
+    },
+        async created () {
+        try {
+        this.posts = await PostService.getPosts();
+        } catch(err){
+        this.error = err.message;
         }
     },
     methods: {
-        addFood() {
+        async addFood() {
+            await PostService.insertPost(this.name);
+            this.posts = await PostService.getPosts();
             // constructing newly added food.
             const newFood = {
-                id: v4(),
+                // id: v4(),
                 name: this.name,
                 price: "$0.00",
                 completed: false
