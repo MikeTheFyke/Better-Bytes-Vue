@@ -5,10 +5,9 @@
             <input type="submit" value="Submit" class="btn" >
         </form>
         <div class="container">
-        <h1> Lastest Items </h1>
             <div class="posts-container">
                 <div class="post" v-for="post in posts" v-bind:item="post" v-bind:key="post._id">
-                    <p class="text">{{post.name}}</p>
+                    <p class="text">{{post.name}} {{post.price}}</p>
                 </div>
             </div>
         </div>
