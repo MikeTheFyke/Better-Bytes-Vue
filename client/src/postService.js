@@ -1,4 +1,4 @@
-import axios from ('axios');
+import axios from 'axios';
 
 const url = 'http://localhost:5000/api/posts/';
 
@@ -6,19 +6,19 @@ class PostService {
     // GET Post
 
     static getPosts() {
-        return new Promise( async (resolve, reject) => {
-            try {
-                const res = await axios.get(url);
+        return new Promise((resolve, reject) => {
+            axios.get(url).then((res) => {
                 const data = res.data;
                 resolve(
                     data.map(post => ({
                         ...post,
-                        createdAt: new Date (post.createdAt)
+                        createdAt: new Date(post.created)
                     }))
                 );
-            } catch (err){
+            })
+            .catch ((err) => {
                 reject(err);
-            }
+            })
         });
     }
 

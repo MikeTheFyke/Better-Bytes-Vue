@@ -18,6 +18,8 @@ import Foods from './components/Foods'
 import AddFood from './components/AddFood'
 import Header from './components/layout/Header'
 
+import PostService from './PostService.js'
+
 export default {
   name: 'App',
   components: {
@@ -49,7 +51,16 @@ export default {
         //   price: "$10.98",
         //   completed: false
         // }
-      ]
+      ],
+      error: '',
+      text: ''
+    }
+  },
+  async created () {
+    try {
+      this.posts = await PostService.getPosts();
+    } catch(err){
+      this.error = err.message;
     }
   },
   methods: {
