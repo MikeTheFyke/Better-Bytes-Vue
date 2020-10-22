@@ -4,7 +4,7 @@
     <AddFood v-on:add-food="addFood"/>
     <!-- new foods component -->
     <!-- used v-bind to pass foods data up to Foods component as a prop. -->
-    <Foods v-bind:foods="foods" v-on:del-food="deleteFood" /> 
+    <!-- <Foods v-bind:foods="foods" v-on:del-food="deleteFood" />  -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
 </template>
@@ -12,7 +12,7 @@
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
 // import neew foods component.
-import Foods from './components/Foods'
+// import Foods from './components/Foods'
 import AddFood from './components/AddFood'
 import Header from './components/layout/Header'
 
@@ -23,7 +23,7 @@ export default {
   components: {
     // HelloWorld
     Header,
-    Foods,
+    // Foods,
     AddFood
   },
     // Added data method
@@ -64,10 +64,10 @@ export default {
   //   }
   // },
   methods: {
-    deleteFood(id){
-      // filter and keep any id that doesnt match id that is passed to this method.
-      this.foods = this.foods.filter(food => food.id !== id);
-    },
+    // deleteFood(id){
+    //   // filter and keep any id that doesnt match id that is passed to this method.
+    //   this.foods = this.foods.filter(food => food.id !== id);
+    // },
     // addFood(newFood){
     //   // await PostService.insertPost(this.name);
     //   // this.posts = await PostService.getPosts();
