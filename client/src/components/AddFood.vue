@@ -35,7 +35,7 @@ export default {
         }
     },
     methods: {
-                async markComplete() {
+                async markComplete(id) {
                 // v-bind:class="is-complete"
                 },
                 async addFood() {
