@@ -95,6 +95,8 @@ form{
     cursor: pointer;
     float: right;
     outline: none;
+    border-style: solid;
+    border-color: #ff0000;
 }
 
 </style>
