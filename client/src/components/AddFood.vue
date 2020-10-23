@@ -4,9 +4,8 @@
             <input type="text" v-model="name" name="name" placeholder="Add New Food..." class="foodInput"  autocomplete="off">
             <input type="submit" value="Submit" class="btn" >
         </form>
-                <div class="food-item" v-for="post in posts" v-bind:item="post" v-bind:key="post._id" v-bind:class="{'is-complete':post.completed}">
-                    <p>
-                        <input type="checkbox" v-on:change="markComplete">
+                <div class="food-item" v-for="post in posts" v-bind:item="post" v-bind:key="post._id" >
+                    <p v-on:dbclick="markComplete(post._id)">
                         {{post.name}} {{post.price}}
                         <button v-on:click="deleteFood(post._id)" class="del">X</button>
                     </p>
@@ -24,8 +23,7 @@ export default {
             posts: [],
             error: '',
             name: '',
-            price: '$0.00',
-            completed: false
+            price: '$0.00'
         }
     },
     // created ia a life cycle method
@@ -38,7 +36,7 @@ export default {
     },
     methods: {
                 async markComplete() {
-                    this.post.completed = !this.post.completed;
+                // v-bind:class="is-complete"
                 },
                 async addFood() {
                     await PostService.insertPost(this.name);

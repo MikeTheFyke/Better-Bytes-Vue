@@ -15,7 +15,6 @@ router.post('/', async (req, res) => {
     await posts.insertOne({
         name: req.body.name,
         price: "$0.00",
-        completed: false,
         createdAt: new Date()
     });
     res.status(201).send();
@@ -25,9 +24,9 @@ router.post('/', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     const posts = await loadPostsCollection();
     await posts.deleteOne({_id: new mongodb.ObjectID (req.params.id)})
+    console.log("Deleting")
     res.status(200).send({});
 })
-
 
 // Connection to MongoDB
 async function loadPostsCollection() {

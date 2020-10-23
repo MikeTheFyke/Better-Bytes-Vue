@@ -33,6 +33,11 @@ class PostService {
     static deletePost(id){
         return axios.delete(`${url}${id}`);
     }
+
+    // Update Post
+    static updatePost(id){
+        return axios.post(`${url}${id}`);
+    }
 }
 
 export default PostService;
