@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <AddFood v-on:add-food="addFood"/>
+    <AddFood />
     <!-- new foods component -->
     <!-- used v-bind to pass foods data up to Foods component as a prop. -->
     <!-- <Foods v-bind:foods="foods" v-on:del-food="deleteFood" />  -->
