@@ -36,7 +36,7 @@ class PostService {
 
     // Update Post
     static updatePost(id){
-        return axios.post(`${url}${id}`);
+        return axios.put(`${url}${id}`);
     }
 }
 
