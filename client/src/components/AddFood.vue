@@ -94,6 +94,7 @@ form{
     border-radius: 50%;
     cursor: pointer;
     float: right;
+    outline: none;
 }
 
 </style>
