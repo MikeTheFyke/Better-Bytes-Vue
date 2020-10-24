@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button v-on:click="dropDown()">DropDown</button>
+        <button v-on:click="dropDown()" id="AddButton">+</button>
         <form @submit.prevent="addFood" id="AddNewFood"> 
             <input type="text" v-model="name" name="name" placeholder="Add New Food..." class="foodInput"  autocomplete="off">
             <input type="submit" value="Submit" class="btn" >
@@ -38,7 +38,7 @@ export default {
     },
     methods: {
             dropDown(){
-                TweenMax.to("#AddNewFood", 1, { opacity: 1, delay: 2})
+                TweenMax.to("#AddNewFood", 1, { opacity: 1, delay: 1})
             },
                 async markComplete() {
                 // v-bind:class="is-complete"
@@ -68,6 +68,12 @@ export default {
 </script>
 
 <style scoped>
+
+#AddButton{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
 
 #AddNewFood{
     opacity:0;
