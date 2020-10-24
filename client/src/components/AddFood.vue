@@ -40,7 +40,7 @@ export default {
             dropDown(){
                     TweenMax.to("#AddNewFood", 0.50, { x: '-325px'});
                     TweenMax.to("#AddNewFood", 0.50, { x: '-275px', delay: 0.50});
-                    TweenMax.to("#AddButton", 0.50, { x: '-275px', delay: 0.50});
+                    TweenMax.to("#AddButton", 0.50, { x: '200px', delay: 0.50});
             },
                 async markComplete() {
                 // v-bind:class="is-complete"
