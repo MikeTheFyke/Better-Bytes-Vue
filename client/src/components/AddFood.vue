@@ -73,7 +73,9 @@ export default {
     width: 50px;
     height: 50px;
     border-radius: 25px;
+    color: white;
     background-color: #50e03d;
+    font-size: 40px;
     outline: none;
 }
 
