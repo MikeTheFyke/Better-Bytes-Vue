@@ -70,11 +70,15 @@ export default {
 <style scoped>
 
 #AddButton{
+    position: absolute;
+    top: 7px;
+    right: 20px;
     width: 50px;
     height: 50px;
     border-radius: 25px;
     color: white;
     background-color: #50e03d;
+    border-color: transparent;
     font-size: 40px;
     outline: none;
 }
