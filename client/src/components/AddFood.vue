@@ -74,6 +74,7 @@ export default {
     height: 50px;
     border-radius: 25px;
     background-color: #50e03d;
+    outline: none;
 }
 
 #AddNewFood{
