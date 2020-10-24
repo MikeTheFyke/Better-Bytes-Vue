@@ -38,8 +38,8 @@ export default {
     },
     methods: {
             dropDown(){
-                    TweenMax.to("#AddNewFood", 0.50, { x: '-325px'});
-                    TweenMax.to("#AddNewFood", 0.50, { x: '-275px', delay: 0.50});
+                    TweenMax.to("#AddNewFood", 0.50, { x: '-525px'});
+                    TweenMax.to("#AddNewFood", 0.50, { x: '-475px', delay: 0.50});
                     TweenMax.to("#AddButton", 0.50, { x: '200px', delay: 0.50});
             },
                 async markComplete() {
@@ -88,7 +88,7 @@ export default {
 #AddNewFood{
     position: absolute;
     top: 17px;
-    right: -250px;
+    right: -450px;
 }
 
 form{
@@ -99,6 +99,10 @@ form{
     flex: 10;
     padding: 5px;
     outline: none;
+    color: #50e03d;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-style: solid;
 }
 
 .btn{
@@ -110,6 +114,7 @@ form{
     border-style: solid;
     background-color: #50e03d;
     color: white;
+    outline: none;
 }
 
 .food-item{
