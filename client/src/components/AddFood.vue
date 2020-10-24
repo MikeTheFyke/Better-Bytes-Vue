@@ -16,6 +16,7 @@
 
 <script>
 import PostService from '../PostService'
+import TweenMax  from 'greensock';
 
 export default {
     name: "AddFood",
@@ -67,6 +68,10 @@ export default {
 </script>
 
 <style scoped>
+
+#AddNewFood{
+    opacity:0;
+}
 
 form{
     display: flex;
