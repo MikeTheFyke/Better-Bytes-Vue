@@ -38,7 +38,7 @@ export default {
     },
     methods: {
             dropDown(){
-                TweenMax.to("#AddNewFood", 1, { opacity: 1, delay: 1})
+                    TweenMax.to("#AddNewFood", 1, { y: '100px', delay: 1});
             },
                 async markComplete() {
                 // v-bind:class="is-complete"
@@ -84,7 +84,8 @@ export default {
 }
 
 #AddNewFood{
-    opacity:0;
+ position: absolute;
+ top: -100px;
 }
 
 form{
