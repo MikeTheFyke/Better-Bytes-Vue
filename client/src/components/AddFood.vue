@@ -26,7 +26,8 @@ export default {
             posts: [],
             error: '',
             name: '',
-            price: '$0.00'
+            price: '$0.00',
+            quantity: '0'
         }
     },
     // created ia a life cycle method
