@@ -3,6 +3,7 @@
         <button v-on:click="dropDown()" id="AddButton">+</button>
         <form @submit.prevent="addFood" id="AddNewFood"> 
             <input type="text" v-model="name" name="name" placeholder="Add New Food..." class="foodInput"  autocomplete="off">
+            <input type="text" v-model="quantity" name="quantity" placeholder="Add Food Quantity..." class="quantityInput"  autocomplete="off">
             <input type="submit" value="Add Food" class="btn" >
         </form>
                 <div class="food-item" v-for="post in posts" v-bind:item="post" v-bind:key="post._id" >
