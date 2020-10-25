@@ -64,11 +64,6 @@ export default {
   //   }
   // },
   methods: {
-            mounted() {
-              window.addEventListener('load', () => {
-                  Tweenmax.to("Header", 0.5, { y: '100px', delay: 0.5})
-              })
-            }
     // deleteFood(id){
     //   // filter and keep any id that doesnt match id that is passed to this method.
     //   this.foods = this.foods.filter(food => food.id !== id);
