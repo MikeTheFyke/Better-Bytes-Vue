@@ -6,7 +6,7 @@
             <input type="submit" value="Add Food" class="btn" >
         </form>
                 <div class="food-item" v-for="post in posts" v-bind:item="post" v-bind:key="post._id" >
-                    <p v-on:dbclick="markComplete(post._id)">
+                    <p v-on:click="markComplete">
                         {{post.name}} {{post.price}}
                         <button v-on:click="deleteFood(post._id)" class="del">X</button>
                     </p>
@@ -43,8 +43,8 @@ export default {
                     TweenMax.to("#AddNewFood", 0.50, { x: '-475px', delay: 0.50});
                     TweenMax.to("#AddButton", 0.50, { x: '200px', delay: 0.50});
             },
-                async markComplete() {
-                // v-bind:class="is-complete"
+                markComplete() {
+                
                 },
                 async addFood() {
                     await PostService.insertPost(this.name);
