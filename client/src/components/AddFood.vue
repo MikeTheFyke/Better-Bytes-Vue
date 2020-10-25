@@ -8,7 +8,7 @@
         </form>
                 <div class="food-item" v-for="post in posts" v-bind:item="post" v-bind:key="post._id" >
                     <p v-on:click="markComplete">
-                        {{post.name}} {{post.quantity}}
+                        Qty: {{post.quantity}} {{post.name}} 
                         <button v-on:click="deleteFood(post._id)" class="del">X</button>
                     </p>
                 </div>
