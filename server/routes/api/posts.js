@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
     await posts.insertOne({
         name: req.body.name,
         price: "$0.00",
-        quantity: '0',
+        quantity: req.body.quantity,
         createdAt: new Date()
     });
     res.status(201).send();

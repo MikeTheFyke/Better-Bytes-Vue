@@ -8,7 +8,7 @@
         </form>
                 <div class="food-item" v-for="post in posts" v-bind:item="post" v-bind:key="post._id" >
                     <p v-on:click="markComplete">
-                        {{post.name}} {{post.price}}
+                        {{post.name}} {{post.quantity}}
                         <button v-on:click="deleteFood(post._id)" class="del">X</button>
                     </p>
                 </div>
@@ -27,7 +27,7 @@ export default {
             error: '',
             name: '',
             price: '$0.00',
-            quantity: '0'
+            quantity: ''
         }
     },
     // created ia a life cycle method
@@ -49,7 +49,7 @@ export default {
                 
                 },
                 async addFood() {
-                    await PostService.insertPost(this.name);
+                    await PostService.insertPost(this.name, this.quantity);
                     this.posts = await PostService.getPosts();
                     // constructing newly added food.
                     // const newFood = {
@@ -62,6 +62,7 @@ export default {
                     // this.$emit('add-food', newFood);
                     // clears form
                     this.name = '';
+                    this.quantity = '';
                 },
                 async deleteFood(id) {
                     await PostService.deletePost(id);
