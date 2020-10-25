@@ -37,6 +37,7 @@ export default {
         }
     },
     methods: {
+
             dropDown(){
                     TweenMax.to("#AddNewFood", 0.50, { x: '-525px'});
                     TweenMax.to("#AddNewFood", 0.50, { x: '-475px', delay: 0.50});
