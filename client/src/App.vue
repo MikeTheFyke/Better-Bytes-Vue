@@ -15,7 +15,7 @@
 // import Foods from './components/Foods'
 import AddFood from './components/AddFood'
 import Header from './components/layout/Header'
-
+import TweenMax  from 'greensock';
 // import PostService from './PostService.js'
 
 export default {
