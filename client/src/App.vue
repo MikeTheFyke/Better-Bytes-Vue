@@ -9,7 +9,6 @@
 import AddFood from './components/AddFood'
 import Header from './components/layout/Header'
 
-
 export default {
   name: 'App',
   components: {
@@ -24,7 +23,6 @@ export default {
   methods: {
   }
 }
-
 </script>
 
 <style>
