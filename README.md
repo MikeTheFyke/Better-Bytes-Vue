@@ -13,7 +13,7 @@ npm run dev
 localhost:5050/api/posts
 
 Vue
-MongoDB
+MongoDB altas server - Vue_Bytes
 Nodemon
 Axios
 Sass
