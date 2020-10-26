@@ -1,24 +1,20 @@
-# vueit
+A single page Vue app with gsap animation.
 
-## Project setup
-```
-npm install
-```
+Front-end Vue server
 
-### Compiles and hot-reloads for development
-```
 npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+http://localhost:8080/
 
-### Lints and fixes files
-```
-npm run lint
-```
+Back-end MongoDB server
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+npm run dev
+
+localhost:5050/api/posts
+
+Vue
+MongoDB
+Nodemon
+Axios
+Sass
+Gsap
