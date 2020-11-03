@@ -20,7 +20,7 @@ export default {
 }
 
 h1{
-    font-family: "Superfats";
+    font-family: "BigBottom";
 }
 
 .header a{

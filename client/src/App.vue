@@ -39,8 +39,8 @@ body {
 }
 
 @font-face {
-  font-family: "Superfats";
-  src: local("Superfats"),
-   url(./fonts/Superfats-6PRM.ttf) format("truetype");
+  font-family: "BigBottom";
+  src: local("BigBottom"),
+   url(./fonts/Big_Bottom_Typeface_Normal.ttf) format("truetype");
 }
 </style>
