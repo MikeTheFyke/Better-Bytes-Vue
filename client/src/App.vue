@@ -37,4 +37,10 @@ body {
   line-height: 1.4;
   background-color: #4fa861;
 }
+
+@font-face {
+  font-family: "Superfats";
+  src: local("Superfats"),
+   url(./fonts/Superfats-6PRM.ttf) format("truetype");
+}
 </style>

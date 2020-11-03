@@ -19,6 +19,10 @@ export default {
     padding: 10px;
 }
 
+h1{
+    font-family: "Superfats";
+}
+
 .header a{
     color: #fff;
     padding-right: 5px;
