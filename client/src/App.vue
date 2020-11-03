@@ -35,5 +35,6 @@ export default {
 body {
   font-family:Arial, Helvetica, sans-serif;
   line-height: 1.4;
+  background-color: #4fa861;
 }
 </style>

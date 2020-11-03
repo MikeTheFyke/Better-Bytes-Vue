@@ -38,9 +38,7 @@ export default {
         }
     },
     mounted: function() {
-        TweenMax.to("#AddNewFood", 0.50, { x: '-525px'});
-        TweenMax.to("#AddNewFood", 0.50, { x: '-475px', delay: 0.50});
-        TweenMax.to("#AddButton", 0.50, { x: '200px', delay: 0.50});
+        TweenMax.to("#AddNewFood", 0.50, { x: '300px'});
     },
     methods: {
                 markComplete() {
@@ -73,24 +71,10 @@ export default {
 
 <style scoped>
 
-#AddButton{
-    position: absolute;
-    top: 7px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    color: white;
-    background-color: #50e03d;
-    border-color: transparent;
-    font-size: 40px;
-    outline: none;
-}
-
 #AddNewFood{
     position: absolute;
-    top: 17px;
-    right: -450px;
+    top: 50%;
+    left: -300px;
 }
 
 form{
@@ -105,6 +89,8 @@ form{
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     border-style: solid;
+    border-color: white;
+    width: 100px;
 }
 
 .btn{
