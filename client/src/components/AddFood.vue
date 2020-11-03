@@ -1,13 +1,14 @@
 <template>
     <div>
+        <div id="sphereOne"></div>
+        <div id="sphereTwo"></div>
         <form @submit.prevent="addFood" id="AddNewFood"> 
             <input type="text" v-model="name" name="name" placeholder="Add New Food..." class="foodInput"  autocomplete="off">
-            <input type="text" v-model="quantity" name="quantity" placeholder="Add Food Quantity..." class="quantityInput"  autocomplete="off">
             <input type="submit" value="Add Food" class="btn" >
         </form>
         <div class="food-item" v-for="post in posts" v-bind:item="post" v-bind:key="post._id" >
             <p v-on:click="markComplete">
-                Qty: {{post.quantity}} {{post.name}} 
+                {{post.name}} 
                 <button v-on:click="deleteFood(post._id)" class="del">X</button>
             </p>
         </div>
@@ -24,9 +25,10 @@ export default {
         return{
             posts: [],
             error: '',
-            name: '',
-            price: '$0.00',
-            quantity: ''
+            name: ''
+            // ,
+            // price: '$0.00',
+            // quantity: ''
         }
     },
     // created ia a life cycle method
@@ -38,7 +40,9 @@ export default {
         }
     },
     mounted: function() {
-        TweenMax.to("#AddNewFood", 0.50, { x: '300px'});
+        TweenMax.to("#sphereOne", 1, { scale: 30})
+        TweenMax.to("#sphereTwo", 1, { scale: 15})
+        TweenMax.to("#AddNewFood", 0.50, { opacity: 1, x: window.innerWidth/2-165, delay: 1});
     },
     methods: {
                 markComplete() {
@@ -58,7 +62,7 @@ export default {
                     // this.$emit('add-food', newFood);
                     // clears form
                     this.name = '';
-                    this.quantity = '';
+                    // this.quantity = '';
                 },
                 async deleteFood(id) {
                     await PostService.deletePost(id);
@@ -71,10 +75,31 @@ export default {
 
 <style scoped>
 
+#sphereOne{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    background-color: #2f693b;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+#sphereTwo{
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    background-color: #2f693b;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+
 #AddNewFood{
     position: absolute;
     top: 50%;
-    left: -300px;
+    left: 0px;
+    opacity: 0;
 }
 
 form{
@@ -86,8 +111,8 @@ form{
     padding: 5px;
     outline: none;
     color: #50e03d;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     border-style: solid;
     border-color: white;
     width: 100px;
@@ -95,14 +120,15 @@ form{
 
 .btn{
     flex: 2;
-    width: 225px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    width: 230px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     border-color: white;
     border-style: solid;
     background-color: #50e03d;
     color: white;
     outline: none;
+    padding: 5px;
 }
 
 .food-item{
