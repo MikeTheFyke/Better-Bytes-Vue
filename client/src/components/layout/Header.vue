@@ -5,22 +5,35 @@
 </template>
 
 <script>
+import TweenMax  from 'greensock';
+
 export default {
-    name: "Header"
+    name: "Header",
+    data(){
+        return{
+
+        }
+    },
+    mounted: function(){
+        TweenMax.to("h1", 1, { y: 100})
+    }
 }
 </script>
 
 <style scoped>
 
 .header{
+    position: absolute;
+    top: -100px;
     background: transparent;
     color: #fff;
     text-align: center;
-    padding: 10px;
+    width: 100%;
 }
 
 h1{
     font-family: "BigBottom";
+
 }
 
 .header a{

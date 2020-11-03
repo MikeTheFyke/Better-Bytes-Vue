@@ -110,12 +110,16 @@ form{
     flex: 10;
     padding: 5px;
     outline: none;
-    color: #50e03d;
+    color: #4fa861;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     border-style: solid;
     border-color: white;
     width: 100px;
+}
+
+.foodInput::placeholder{
+    color: #4fa861;
 }
 
 .btn{
@@ -125,7 +129,7 @@ form{
     border-bottom-right-radius: 5px;
     border-color: white;
     border-style: solid;
-    background-color: #50e03d;
+    background-color: #4fa861;
     color: white;
     outline: none;
     padding: 5px;
