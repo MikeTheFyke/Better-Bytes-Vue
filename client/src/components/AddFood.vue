@@ -6,10 +6,14 @@
             <div id="sphereTwo"></div>
             </div>
         </div>
-        <form @submit.prevent="addFood" id="AddNewFood"> 
-            <input type="text" v-model="name" name="name" placeholder="Add New Food..." class="foodInput"  autocomplete="off">
-            <input type="submit" value="Add Food" class="btn" >
-        </form>
+        <div id="addContainer">
+            <div id="addContainer2">
+            <form @submit.prevent="addFood" id="AddNewFood"> 
+                <input type="text" v-model="name" name="name" placeholder="Add New Food..." class="foodInput"  autocomplete="off">
+                <input type="submit" value="Add Food" class="btn" >
+            </form>
+            </div>
+        </div>
         <div class="food-item" v-for="post in posts" v-bind:item="post" v-bind:key="post._id" >
             <p v-on:click="markComplete">
                 {{post.name}} 
@@ -46,12 +50,10 @@ export default {
     mounted: function() {
         TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 30, delay: 1.75})
         TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 15, delay: 1.75})
-        TweenMax.to("#AddNewFood", 0.50, { opacity: 1, x: window.innerWidth/2-165, delay: 2.5});
+        TweenMax.to("#AddNewFood", 0.50, { x:'-200vw'});
+        TweenMax.to("#AddNewFood", 0.50, { opacity: 1, x:0, delay: 3});
     },
     methods: {
-                markComplete() {
-                
-                },
                 async addFood() {
                     await PostService.insertPost(this.name, this.quantity);
                     this.posts = await PostService.getPosts();
@@ -110,15 +112,28 @@ export default {
     opacity: 0;
 }
 
+#addContainer{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+}
+
+#addContainer2{
+    width:500px;
+    margin: 0px auto;
+}
+
 #AddNewFood{
     position: absolute;
     top: 50%;
-    left: 0px;
+    margin: 0px 80px;
     opacity: 0;
 }
 
 form{
     display: flex;
+    width: 300px;
 }
 
 .foodInput{
@@ -130,7 +145,6 @@ form{
     border-bottom-left-radius: 5px;
     border-style: solid;
     border-color: white;
-    width: 100px;
 }
 
 .foodInput::placeholder{
