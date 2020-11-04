@@ -10,8 +10,10 @@ app.use(cors());
 
 
 const posts = require('./routes/api/posts');
+const searched = require('./routes/api/searched');
 
 app.use('/api/posts', posts)
+app.use('/api/searched', searched)
 
 
 // Heroko
