@@ -30,7 +30,7 @@
         </div>
 
         <div id="groceryButtonContainer">
-            <button id="groceryButton" v-on:click="viewGrocery()"><img :src="glImage"></button>
+            <button id="groceryButton" v-on:click="viewGrocery()"><img :src="glImage" id="groceryButtonImage"></button>
         </div>
     </div>    
 </template>
@@ -305,7 +305,15 @@ form{
     border-style: solid;
     border-width: 3px;
     background-color:  #ed6f15;
+    text-align: center;
     outline: none;
 }
 
+#groceryButtonImage{
+    position: absolute;
+    top:  2px;
+    left: 2px;
+    width: 40px;
+    height: 40px;
+}
 </style>
