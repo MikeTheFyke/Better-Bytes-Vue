@@ -60,8 +60,13 @@ export default {
         }
     },
     mounted: function() {
-        TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 30, delay: 1.75})
-        TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 15, delay: 1.75})
+        TweenMax.to("#sphereContainer", 0.25, { opacity: 1, y: '-300h'})
+        TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 1, delay: 1.75})
+        TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 1, delay: 1.75})
+        TweenMax.to("#sphereContainer", 1, { opacity: 1, y: 0, delay: 2})
+
+        TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 30, delay: 2.5})
+        TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 15, delay: 2.5})
         TweenMax.to("#AddNewFood", 0.50, { x:'-200vw'});
         TweenMax.to("#AddNewFood", 0.50, { opacity: 1, x:0, delay: 3});
 
