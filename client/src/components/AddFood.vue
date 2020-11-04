@@ -30,7 +30,7 @@
         </div>
 
         <div id="groceryButtonContainer">
-            <button id="groceryButton" v-on:click="viewGrocery()"></button>
+            <button id="groceryButton" v-on:click="viewGrocery()"><img :src="glImage"></button>
         </div>
     </div>    
 </template>
@@ -38,11 +38,13 @@
 <script>
 import PostService from '../PostService'
 import TweenMax  from 'greensock';
+import glImage from "../assets/groceryList-Normal.png"
 
 export default {
     name: "AddFood",
     data(){
         return{
+            glImage: glImage,
             posts: [],
             error: '',
             name: ''
