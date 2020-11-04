@@ -22,7 +22,7 @@
                 <button id="closeGrocery" v-on:click="closeGrocery()">X</button>
                 <div class="food-item" v-for="post in posts" v-bind:item="post" v-bind:key="post._id" >
                     <p>
-                        {{post.name}} 
+                        {{post.name}}
                         <button v-on:click="deleteFood(post._id)" class="del">X</button>
                     </p>
                 </div>
@@ -107,6 +107,10 @@ export default {
                     // clears form
                     this.name = '';
                     // this.quantity = '';
+                },
+                async searchFood(){
+                    await PostService.insertSearch(this.name);
+                    this.searched = await PostService.getSearch();
                 },
                 async deleteFood(id) {
                     await PostService.deletePost(id);
