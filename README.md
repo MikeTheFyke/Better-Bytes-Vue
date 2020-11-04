@@ -1,20 +1,21 @@
 A single page Vue app with gsap animation.
 
-Front-end Vue server
-
-npm run serve
+Front-end Vue Client Server - npm run serve
 
 http://localhost:8080/
 
-Back-end MongoDB server
-
-npm run dev
+Back-end MongoDB Server - npm run dev
 
 localhost:5050/api/posts
 
-Vue
-MongoDB altas server - Vue_Bytes
-Nodemon
-Axios
-Sass
-Gsap
+!["Screenshot of UX/UI"](https://github.com/MikeTheFyke/VueIt/blob/master/client/src/assets/ScreenShot-UIUX.jpg)
+
+Dependencies
+- Vue
+- MongoDB altas server - Vue_Bytes
+- Nodemon
+- Axios
+- Express
+- Cheerio
+- Sass
+- Gsap
