@@ -8,7 +8,9 @@ Back-end MongoDB Server - npm run dev
 
 localhost:5050/api/posts
 
-!["Screenshot of UX/UI"](https://github.com/MikeTheFyke/VueIt/blob/master/client/src/assets/ScreenShot-UI.mp4)
+!["Screenshot of UX/UI"](https://github.com/MikeTheFyke/VueIt/blob/master/client/src/assets/ScreenShot-UIUX.jpg)
+
+!["Screenshot of UX/UI"](https://github.com/MikeTheFyke/VueIt/blob/master/client/src/assets/ScreenShot-GroceryList.jpg)
 
 Dependencies
 - Vue
