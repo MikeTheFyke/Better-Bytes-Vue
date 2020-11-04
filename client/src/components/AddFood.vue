@@ -70,6 +70,10 @@ export default {
         TweenMax.to("#AddNewFood", 0.50, { x:'-200vw'});
         TweenMax.to("#AddNewFood", 0.50, { opacity: 1, x:0, delay: 3});
 
+        TweenMax.to("#groceryButtonContainer", 0.50, { opacity: 1, delay: 3});
+        TweenMax.to("#groceryButton", 0.50, { scale: 2, delay: 3});
+        TweenMax.to("#groceryButton", 0.50, { scale: 1, delay: 3.5});
+
         document.getElementById('groceryButton').addEventListener('mouseover', function(){
             TweenMax.to('#groceryButton', 1.5, { backgroundColor: "white", borderColor: "#ed6f15", scale: 1.5, ease: "Elastic.easeOut" } );
         });
@@ -284,6 +288,7 @@ form{
     height: 50px;
     text-align: center;
     vertical-align: auto;
+    opacity: 0;
 }
 
 #groceryButton{
