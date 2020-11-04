@@ -149,7 +149,7 @@ export default {
 
 #addContainer{
     position: absolute;
-    top: 50%;
+    top: 49%;
     width: 100%;
     text-align: center;
 }
