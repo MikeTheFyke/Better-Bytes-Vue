@@ -16,11 +16,16 @@
             </div>
         </div>
 
-        <div class="food-item" v-for="post in posts" v-bind:item="post" v-bind:key="post._id" >
-            <p v-on:click="markComplete">
-                {{post.name}} 
-                <button v-on:click="deleteFood(post._id)" class="del">X</button>
-            </p>
+        <div id="groceryListContainer">
+            <div id="groceryList">
+                <h1 id="goceryListTitle">Grocery List</h1>
+                <div class="food-item" v-for="post in posts" v-bind:item="post" v-bind:key="post._id" >
+                    <p>
+                        {{post.name}} 
+                        <button v-on:click="deleteFood(post._id)" class="del">X</button>
+                    </p>
+                </div>
+            </div>
         </div>
 
         <div id="groceryButtonContainer">
@@ -179,6 +184,28 @@ form{
     padding: 5px;
 }
 
+#groceryListContainer{
+    position: absolute;
+    top: 20%;
+    width: 100%;
+}
+
+#groceryList{
+    width: 400px;
+    margin: 0px auto;
+    background-color: #4fa861;
+    border-color: white;
+    border-style: solid;
+    border-radius: 25px;
+    border-width: 3px;
+}
+
+#goceryListTitle{
+    color: white;
+    width: 200px;
+    margin: 0px auto;
+}
+
 .food-item{
     background: #f4f4f4;
     padding: 10px;
@@ -190,15 +217,15 @@ form{
 }
 
 .del{
-    background: #ed6f15;
-    color: #fff;
+    background: white;
+    color: #ed6f15;
     padding: 5px 9px;
     border-radius: 50%;
     cursor: pointer;
     float: right;
     outline: none;
     border-style: solid;
-    border-color: #ff0000;
+    border-color: #ed6f15;
 }
 
 #groceryButtonContainer{
