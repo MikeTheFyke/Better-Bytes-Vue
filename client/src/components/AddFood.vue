@@ -2,8 +2,8 @@
     <div>
         <div id="sphereContainer">
             <div id="sphereContainer2">
-            <div id="sphereOne"></div>
-            <div id="sphereTwo"></div>
+            <img :src="acornLeft" id="sphereOne">
+            <img :src="acornRight" id="sphereTwo">
             </div>
         </div>
 
@@ -39,12 +39,16 @@
 import PostService from '../PostService'
 import TweenMax  from 'greensock';
 import glImage from "../assets/groceryList-Normal.png"
+import acornLeft from "../assets/acorn-left01.png"
+import acornRight from "../assets/acorn-right01.png"
 
 export default {
     name: "AddFood",
     data(){
         return{
             glImage: glImage,
+            acornLeft: acornLeft,
+            acornRight: acornRight,
             posts: [],
             error: '',
             name: ''
@@ -67,8 +71,8 @@ export default {
         TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 1, delay: 1.75})
         TweenMax.to("#sphereContainer", 1, { opacity: 1, y: 0, delay: 2})
 
-        TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 30, delay: 2.5})
-        TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 15, delay: 2.5})
+        TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 15, rotation:  10, delay: 2.5})
+        TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 10, rotation: -10, delay: 2.5})
         TweenMax.to("#AddNewFood", 0.50, { x:'-200vw'});
         TweenMax.to("#AddNewFood", 0.50, { opacity: 1, x:0, delay: 3});
 
@@ -133,7 +137,7 @@ export default {
 
 #sphereContainer{
     position: absolute;
-    top: 50%;
+    top: 48%;
     width: 100%;
     text-align: center;
     padding-left: 40px;
@@ -146,19 +150,15 @@ export default {
 
 #sphereOne{
     float: left;
-    background-color: #2f693b;
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
+    width: 20px;
+    height: 20px;
     opacity: 0;
 }
 
 #sphereTwo{
     float: right;
-    background-color: #2f693b;
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
+    width: 20px;
+    height: 20px;
     opacity: 0;
 }
 
