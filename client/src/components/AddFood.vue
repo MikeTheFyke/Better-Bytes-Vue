@@ -175,7 +175,7 @@ form{
 }
 
 .del{
-    background: #ff0000;
+    background: #ed6f15;
     color: #fff;
     padding: 5px 9px;
     border-radius: 50%;
