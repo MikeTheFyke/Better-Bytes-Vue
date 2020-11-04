@@ -10,7 +10,7 @@ localhost:5050/api/posts
 
 !["Screenshot of UX/UI"](https://github.com/MikeTheFyke/VueIt/blob/master/client/src/assets/ScreenShot-UIUX.jpg)
 
-!["Screenshot of Grocery List"](https://github.com/MikeTheFyke/VueIt/blob/master/client/src/assets/ScreenShot-GroceryList.png)
+!["Screenshot of Grocery List"](https://github.com/MikeTheFyke/VueIt/blob/master/client/src/assets/ScreenShot-GroceryLIst.png)
 
 Dependencies
 - Vue
