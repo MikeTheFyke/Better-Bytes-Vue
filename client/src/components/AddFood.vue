@@ -6,19 +6,25 @@
             <div id="sphereTwo"></div>
             </div>
         </div>
+
         <div id="addContainer">
             <div id="addContainer2">
-            <form @submit.prevent="addFood" id="AddNewFood"> 
-                <input type="text" v-model="name" name="name" placeholder="Add New Food..." class="foodInput"  autocomplete="off">
-                <input type="submit" value="Add Food" class="btn" >
-            </form>
+                <form @submit.prevent="addFood" id="AddNewFood"> 
+                    <input type="text" v-model="name" name="name" placeholder="Add New Food..." class="foodInput"  autocomplete="off">
+                    <input type="submit" value="Add Food" class="btn" >
+                </form>
             </div>
         </div>
+
         <div class="food-item" v-for="post in posts" v-bind:item="post" v-bind:key="post._id" >
             <p v-on:click="markComplete">
                 {{post.name}} 
                 <button v-on:click="deleteFood(post._id)" class="del">X</button>
             </p>
+        </div>
+
+        <div id="groceryButtonContainer">
+            <button id="groceryButton"></button>
         </div>
     </div>    
 </template>
@@ -52,6 +58,15 @@ export default {
         TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 15, delay: 1.75})
         TweenMax.to("#AddNewFood", 0.50, { x:'-200vw'});
         TweenMax.to("#AddNewFood", 0.50, { opacity: 1, x:0, delay: 3});
+
+        document.getElementById('groceryButton').addEventListener('mouseover', function(){
+            TweenMax.to('#groceryButton', 1.5, { backgroundColor: "white", borderColor: "#ed6f15", scale: 1.5, ease: "Elastic.easeOut" } );
+        });
+
+        document.getElementById('groceryButton').addEventListener('mouseout', function(){
+            TweenMax.to('#groceryButton', 1.5, { backgroundColor: "#ed6f15", borderColor: "white", scale: 1, ease: "Elastic.easeOut" } );
+        });
+
     },
     methods: {
                 async addFood() {
@@ -127,7 +142,7 @@ export default {
 #AddNewFood{
     position: absolute;
     top: 50%;
-    margin: 0px 80px;
+    margin: 0px 85px;
     opacity: 0;
 }
 
@@ -184,6 +199,28 @@ form{
     outline: none;
     border-style: solid;
     border-color: #ff0000;
+}
+
+#groceryButtonContainer{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: auto;
+}
+
+#groceryButton{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    border-color: white;
+    border-style: solid;
+    border-width: 3px;
+    background-color:  #ed6f15;
+    outline: none;
 }
 
 </style>
