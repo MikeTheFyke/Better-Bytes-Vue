@@ -1,7 +1,11 @@
 <template>
     <div>
-        <div id="sphereOne"></div>
-        <div id="sphereTwo"></div>
+        <div id="sphereContainer">
+            <div id="sphereContainer2">
+            <div id="sphereOne"></div>
+            <div id="sphereTwo"></div>
+            </div>
+        </div>
         <form @submit.prevent="addFood" id="AddNewFood"> 
             <input type="text" v-model="name" name="name" placeholder="Add New Food..." class="foodInput"  autocomplete="off">
             <input type="submit" value="Add Food" class="btn" >
@@ -40,9 +44,9 @@ export default {
         }
     },
     mounted: function() {
-        TweenMax.to("#sphereOne", 1, { scale: 30})
-        TweenMax.to("#sphereTwo", 1, { scale: 15})
-        TweenMax.to("#AddNewFood", 0.50, { opacity: 1, x: window.innerWidth/2-165, delay: 1});
+        TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 30, delay: 1.75})
+        TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 15, delay: 1.75})
+        TweenMax.to("#AddNewFood", 0.50, { opacity: 1, x: window.innerWidth/2-165, delay: 2.5});
     },
     methods: {
                 markComplete() {
@@ -75,24 +79,35 @@ export default {
 
 <style scoped>
 
-#sphereOne{
+#sphereContainer{
     position: absolute;
     top: 50%;
-    left: 40%;
+    width: 100%;
+    text-align: center;
+    padding-left: 40px;
+}
+
+#sphereContainer2{
+    width: 200px;
+    margin: 0px auto;
+}
+
+#sphereOne{
+    float: left;
     background-color: #2f693b;
     width: 10px;
     height: 10px;
     border-radius: 5px;
+    opacity: 0;
 }
 
 #sphereTwo{
-    position: absolute;
-    top: 50%;
-    left: 70%;
+    float: right;
     background-color: #2f693b;
     width: 10px;
     height: 10px;
     border-radius: 5px;
+    opacity: 0;
 }
 
 #AddNewFood{

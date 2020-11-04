@@ -15,7 +15,7 @@ export default {
         }
     },
     mounted: function(){
-        TweenMax.to("h1", 1, { y: 100})
+        TweenMax.to("h1", 1, { y: 100, delay: 1.5})
     }
 }
 </script>
