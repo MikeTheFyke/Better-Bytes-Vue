@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <h1> Better Bytes </h1>
+        <h1 id="pageTitle"> Better Bytes </h1>
     </header>
 </template>
 
@@ -15,7 +15,7 @@ export default {
         }
     },
     mounted: function(){
-        TweenMax.to("h1", 1, { y: 100, delay: 1.5, ease: "Bounce.easeOut"})
+        TweenMax.to("#pageTitle", 1, { y: 100, delay: 1.5, ease: "Bounce.easeOut"})
     }
 }
 </script>

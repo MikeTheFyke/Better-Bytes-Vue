@@ -19,6 +19,7 @@
         <div id="groceryListContainer">
             <div id="groceryList">
                 <h1 id="goceryListTitle">Grocery List</h1>
+                <button id="closeGrocery" v-on:click="closeGrocery()">X</button>
                 <div class="food-item" v-for="post in posts" v-bind:item="post" v-bind:key="post._id" >
                     <p>
                         {{post.name}} 
@@ -29,7 +30,7 @@
         </div>
 
         <div id="groceryButtonContainer">
-            <button id="groceryButton"></button>
+            <button id="groceryButton" v-on:click="viewGrocery()"></button>
         </div>
     </div>    
 </template>
@@ -72,6 +73,14 @@ export default {
             TweenMax.to('#groceryButton', 1.5, { backgroundColor: "#ed6f15", borderColor: "white", scale: 1, ease: "Elastic.easeOut" } );
         });
 
+        document.getElementById('closeGrocery').addEventListener('mouseover', function(){
+            TweenMax.to('#closeGrocery', 1.5, { backgroundColor: "#4fa861", borderColor: "white", opacity: 1 } );
+        });
+
+        document.getElementById('closeGrocery').addEventListener('mouseout', function(){
+            TweenMax.to('#closeGrocery', 1.5, { backgroundColor: "#4fa861", borderColor: "white", opacity: 0.25 } );
+        });
+
     },
     methods: {
                 async addFood() {
@@ -93,6 +102,12 @@ export default {
                 async deleteFood(id) {
                     await PostService.deletePost(id);
                     this.posts = await PostService.getPosts();
+                },
+                viewGrocery(){
+                    TweenMax.to('#groceryListContainer', 0.5, { scaleY: 1, scaleX: 1, opacity: 1, zIndex: 4})
+                },
+                closeGrocery(){
+                    TweenMax.to('#groceryListContainer', 0.5, { scaleY: 0, scaleX: 0, opacity: 0, zIndex: 0})
                 }
     }
 }
@@ -186,30 +201,57 @@ form{
 
 #groceryListContainer{
     position: absolute;
-    top: 20%;
+    top: 15%;
     width: 100%;
+    opacity: 0;
+    transform: scaleY(0);
+    transform: scaleX(0);
+    transform-origin: top;
 }
 
 #groceryList{
     width: 400px;
     margin: 0px auto;
-    background-color: #4fa861;
+    background-color: #2f693b;
     border-color: white;
     border-style: solid;
-    border-radius: 25px;
-    border-width: 3px;
+    border-radius: 15px;
+    border-width: 4px;
 }
 
 #goceryListTitle{
     color: white;
+    font-family: "BigBottom";
+    font-size: 22px;
     width: 200px;
     margin: 0px auto;
+}
+
+#closeGrocery{
+    position:relative;
+    top: -26px;
+    right: -350px;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-size: 30px;
+    border-radius: 20px;
+    border-style: solid;
+    background-color: #4fa861;
+    border-color: white;
+    border-width: 2px;
+    opacity: 0.25;
+    outline: none;
 }
 
 .food-item{
     background: #f4f4f4;
     padding: 10px;
     border-bottom: 1px #ccc dotted;
+}
+
+.food-item:nth-child(even){
+    background-color: #c5c9c6;
 }
 
 .is-complete{
