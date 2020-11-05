@@ -12,7 +12,7 @@
 </template>
 
 <script>
-
+import TweenMax  from 'greensock';
 import scrappyPupils from "../assets/scrappy-head-pupils.png"
 
 export default {
@@ -21,6 +21,32 @@ export default {
         return{
             scrappyPupils: scrappyPupils
         }
+    },
+    mounted: function(){
+        var mouseX;
+        var mouseY;
+
+        onmousemove = function(e){
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            console.log(mouseX)
+            if ( mouseX >= window.innerWidth/2 + 20){
+                TweenMax.to("#scrappyEyes", 0, { x: '10px' })
+            }
+            else if ( mouseX <= window.innerWidth/2 ){
+                TweenMax.to("#scrappyEyes", 0, { x: '-10px' })
+            } 
+            else {
+                TweenMax.to("#scrappyEyes", 0, { x: mouseX - 400 })
+            }
+
+            if ( mouseY < window.innerHeight/2 - 125 ) {
+                TweenMax.to("#scrappyEyes", 0, { y: mouseY - 280 })
+            } 
+            else if ( mouseY >= window.innerHeight/2 - 125 ) {
+                TweenMax.to("#scrappyEyes", 0, { y: 0 })
+            }
+    }
     }
     
 }
