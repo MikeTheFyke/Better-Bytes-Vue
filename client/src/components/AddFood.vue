@@ -62,7 +62,7 @@ import glImage from "../assets/groceryList-Normal.png"
 import acornLeft from "../assets/acorn-left01.png"
 import acornRight from "../assets/acorn-right01.png"
 import scrappy from "../assets/05.gif"
-import scrappyHead from "../assets/scrappy-head.png"
+import scrappyHead from "../assets/scrappy-head-noeyes.png"
 import scrappyLeftHand from "../assets/scrappy-leftHand.png"
 import scrappyRightHand from "../assets/scrappy-rightHand.png"
 
