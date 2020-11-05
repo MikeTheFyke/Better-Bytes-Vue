@@ -96,6 +96,8 @@ export default {
         TweenMax.to("#groceryButton", 0.50, { scale: 2, delay: 3});
         TweenMax.to("#groceryButton", 0.50, { scale: 1, delay: 3.5});
 
+        TweenMax.to('#scrappyImage', 0.5, { scaleY: 1, delay: 3.5 })
+
         document.getElementById('groceryButton').addEventListener('mouseover', function(){
             TweenMax.to('#groceryButton', 1.5, { backgroundColor: "white", borderColor: "#ed6f15", scale: 1.5, ease: "Elastic.easeOut" } );
         });
@@ -186,7 +188,7 @@ export default {
 #scrappyContainer{
     position: absolute;
     width: 100%;
-    top: 39%;
+    top: 40%;
     text-align: center;
 }
 
@@ -199,6 +201,8 @@ export default {
     float: left;
     width: 50px;
     height: 75px;
+    transform: scaleY(0);
+    transform-origin: bottom;
 }
 
 #scrappy02Container{
