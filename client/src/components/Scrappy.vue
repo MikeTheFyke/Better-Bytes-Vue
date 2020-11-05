@@ -30,14 +30,14 @@ export default {
 
 #pupilsContainer{
     position: absolute;
-    top: 33%;
+    top: 20.5%;
     width: 100%;
     text-align: center;
     padding-left: 60px;
 }
 
 #pupilsContainer2{
-    width: 40px;
+    width: 240px;
     margin: 0px auto;
 }
 
