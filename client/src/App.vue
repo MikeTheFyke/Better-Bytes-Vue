@@ -2,18 +2,21 @@
   <div id="app">
     <Header />
     <AddFood />
+    <Scrappy />
   </div>
 </template>
 
 <script>
 import AddFood from './components/AddFood'
 import Header from './components/layout/Header'
+import Scrappy from './components/Scrappy'
 
 export default {
   name: 'App',
   components: {
     Header,
     AddFood,
+    Scrappy,
   },
   data() {
     return {
