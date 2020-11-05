@@ -16,6 +16,14 @@ export default {
     },
     mounted: function(){
         TweenMax.to("#pageTitle", 1, { y: 100, delay: 1.5, ease: "Bounce.easeOut"})
+
+        document.getElementById('pageTitle').addEventListener('mouseover', function(){
+            TweenMax.to('#pageTitle', 1.5, { scale: 2} );
+        });
+
+        document.getElementById('pageTitle').addEventListener('mouseout', function(){
+            TweenMax.to('#pageTitle', 1.5, { scale: 1} );
+        });
     }
 }
 </script>
