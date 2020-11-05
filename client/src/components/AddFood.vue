@@ -215,14 +215,14 @@ export default {
 
 #headContainer{
     position: absolute;
-    top: 30%;
+    top: 33%;
     width: 100%;
     text-align: center;
     padding-left: 60px;
 }
 
 #headContainer2{
-    width: 0px;
+    width: 40px;
     margin: 0px auto;
 }
 
