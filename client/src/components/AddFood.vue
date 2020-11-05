@@ -4,6 +4,7 @@
             <div id="sphereContainer2">
             <img :src="acornLeft" id="sphereOne">
             <img :src="acornRight" id="sphereTwo">
+            <img :src="scrappyHead" id="scrappyHead">
             </div>
         </div>
 
@@ -48,6 +49,7 @@ import glImage from "../assets/groceryList-Normal.png"
 import acornLeft from "../assets/acorn-left01.png"
 import acornRight from "../assets/acorn-right01.png"
 import scrappy from "../assets/05.gif"
+import scrappyHead from "../assets/scrappy-head.png"
 
 export default {
     name: "AddFood",
@@ -57,6 +59,7 @@ export default {
             acornLeft: acornLeft,
             acornRight: acornRight,
             scrappy: scrappy,
+            scrappyHead : scrappyHead,
             posts: [],
             error: '',
             name: ''
@@ -177,6 +180,10 @@ export default {
     width: 20px;
     height: 20px;
     opacity: 0;
+}
+
+#scrappyHead{
+    
 }
 
 #scrappyContainer{
