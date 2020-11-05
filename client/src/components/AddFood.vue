@@ -123,11 +123,9 @@ export default {
                     // clears form
                     this.name = '';
                     // this.quantity = '';
-                    TweenMax.to('#scrappyImage', 0, { opacity: 0 })
-                    TweenMax.to('#scrappy02Image', 0, { opacity: 1 })
-                    TweenMax.to('#scrappy02Image', 1.5, { x: '200px' })
-                    TweenMax.to('#scrappyImage', 0, { opacity: 1, delay: 1.5 })
-                    TweenMax.to('#scrappy02Image', 0, { x: 0, opacity: 0, delay: 1.5 })
+                    TweenMax.to('#scrappyContainer', 0, { zIndex: 5 })
+                    TweenMax.to('#scrappyImage', 0, { opacity: 1 })
+                    TweenMax.to('#scrappyImage', 1, { x: '200px' })
                 },
                 async searchFood(){
                     await PostService.insertSearch(this.name);
@@ -182,6 +180,7 @@ export default {
     width: 100%;
     top: 48.75%;
     text-align: center;
+    z-index: -1;
 }
 
 #scrappyContainer2{
@@ -195,6 +194,7 @@ export default {
     height: 25px;
     transform: scaleY(0);
     transform-origin: bottom;
+    opacity: 0;
 }
 
 #addContainer{
