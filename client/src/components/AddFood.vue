@@ -7,18 +7,18 @@
             </div>
         </div>
 
-        <div id="scrappyContainer">
-            <div id="scrappyContainer2">
-                <img id="scrappyImage" :src="scrappy">
-            </div>
-        </div>
-
         <div id="addContainer">
             <div id="addContainer2">
                 <form @submit.prevent="addFood" id="AddNewFood"> 
                     <input type="text" v-model="name" name="name" placeholder="Add New Food..." class="foodInput"  autocomplete="off">
                     <input type="submit" value="Add Food" class="btn" >
                 </form>
+            </div>
+        </div>
+
+        <div id="scrappyContainer">
+            <div id="scrappyContainer2">
+                <img id="scrappyImage" :src="scrappy">
             </div>
         </div>
 
@@ -180,7 +180,7 @@ export default {
 #scrappyContainer{
     position: absolute;
     width: 100%;
-    top: 48%;
+    top: 48.75%;
     text-align: center;
 }
 
@@ -192,7 +192,7 @@ export default {
 #scrappyImage{
     float: left;
     width: 38px;
-    height: 33px;
+    height: 25px;
     transform: scaleY(0);
     transform-origin: bottom;
 }
