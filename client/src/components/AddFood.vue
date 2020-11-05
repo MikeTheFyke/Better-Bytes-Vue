@@ -1,5 +1,12 @@
 <template>
     <div>
+        <div id="handContainer">
+            <div id="handContainer2">
+                <img :src="scrappyRightHand" id="scrappyRight">
+                <img :src="scrappyLeftHand" id="scrappyLeft">
+            </div>
+        </div>
+
         <div id="sphereContainer">
             <div id="sphereContainer2">
             <img :src="acornLeft" id="sphereOne">
@@ -44,6 +51,7 @@
         <div id="groceryButtonContainer">
             <button id="groceryButton" v-on:click="viewGrocery()"><img :src="glImage" id="groceryButtonImage"></button>
         </div>
+
     </div>    
 </template>
 
@@ -55,6 +63,8 @@ import acornLeft from "../assets/acorn-left01.png"
 import acornRight from "../assets/acorn-right01.png"
 import scrappy from "../assets/05.gif"
 import scrappyHead from "../assets/scrappy-head.png"
+import scrappyLeftHand from "../assets/scrappy-leftHand.png"
+import scrappyRightHand from "../assets/scrappy-rightHand.png"
 
 export default {
     name: "AddFood",
@@ -65,6 +75,8 @@ export default {
             acornRight: acornRight,
             scrappy: scrappy,
             scrappyHead : scrappyHead,
+            scrappyLeftHand : scrappyLeftHand,
+            scrappyRightHand : scrappyRightHand,
             posts: [],
             error: '',
             name: ''
@@ -96,6 +108,13 @@ export default {
         TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 10, rotation: -10, delay: 2.5})
         TweenMax.to("#sphereOne", 1, { rotation: -10, delay: 3.5})
         TweenMax.to("#sphereTwo", 1, { rotation:  10, delay: 3.5})
+
+        TweenMax.to("#scrappyLeft",  1, { y: '50px', delay: 2.5 })
+        TweenMax.to("#scrappyRight", 1, { y: '50px', delay: 2.5 })
+
+        TweenMax.to("#scrappyLeft",  1, { opacity: 1, y: '20px', scale: 2, rotation: 10, delay: 3.5 })
+        TweenMax.to("#scrappyRight", 1, { opacity: 1, y: 0, x:'20px', scale: 2, rotation: -10, delay: 3.5 })
+
         TweenMax.to("#AddNewFood", 0.50, { x:'-200vw'});
         TweenMax.to("#AddNewFood", 0.50, { opacity: 1, x:0, delay: 3});
 
@@ -211,6 +230,31 @@ export default {
     float: left;
     width: 2px;
     height: 2px;
+}
+
+#handContainer{
+    position: absolute;
+    top: 38%;
+    width: 100%;
+}
+
+#handContainer2{
+    width: 350px;
+    margin: 0px auto;
+}
+
+#scrappyRight{
+    float: left;
+    width: 50px;
+    height: 50px;
+    opacity: 0; 
+}
+
+#scrappyLeft{
+    float: right;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
 }
 
 #scrappyContainer{
