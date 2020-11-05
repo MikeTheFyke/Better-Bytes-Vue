@@ -180,7 +180,7 @@ export default {
 #scrappyContainer{
     position: absolute;
     width: 100%;
-    top: 40%;
+    top: 48%;
     text-align: center;
 }
 
@@ -191,8 +191,8 @@ export default {
 
 #scrappyImage{
     float: left;
-    width: 50px;
-    height: 75px;
+    width: 38px;
+    height: 33px;
     transform: scaleY(0);
     transform-origin: bottom;
 }
