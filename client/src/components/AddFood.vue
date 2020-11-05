@@ -87,10 +87,15 @@ export default {
         TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 1, delay: 1.75})
         TweenMax.to("#sphereContainer", 1, { opacity: 1, y: 0, delay: 2})
 
-        
+        TweenMax.to("#headContainer", 0, {opacity: 0, y:'-300vh'})
+        TweenMax.to("#scrappyHead", 1, {scale: 100, delay: 1.75})
+        TweenMax.to("#headContainer", 1, {opacity: 1, y:'350px', delay: 1.75})
+        TweenMax.to("#headContainer", 0.5, {opacity: 1, y:0, delay: 2.25})
 
         TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 15, rotation:  10, delay: 2.5})
         TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 10, rotation: -10, delay: 2.5})
+        TweenMax.to("#sphereOne", 1, { rotation: -10, delay: 3.5})
+        TweenMax.to("#sphereTwo", 1, { rotation:  10, delay: 3.5})
         TweenMax.to("#AddNewFood", 0.50, { x:'-200vw'});
         TweenMax.to("#AddNewFood", 0.50, { opacity: 1, x:0, delay: 3});
 
@@ -191,21 +196,21 @@ export default {
 
 #headContainer{
     position: absolute;
-    top: 20%;
+    top: 30%;
     width: 100%;
     text-align: center;
-    padding-left: 40px;
+    padding-left: 60px;
 }
 
 #headContainer2{
-    width: 200px;
+    width: 0px;
     margin: 0px auto;
 }
 
 #scrappyHead{
     float: left;
-    width: 200px;
-    height: 200px;
+    width: 2px;
+    height: 2px;
 }
 
 #scrappyContainer{
