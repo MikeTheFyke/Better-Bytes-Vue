@@ -13,6 +13,12 @@
             </div>
         </div>
 
+        <div id="scrappy02Container">
+            <div id="scrappy02Container02">
+                <img id="scrappy02Image" :src="scrappy02">
+            </div>
+        </div>
+
         <div id="addContainer">
             <div id="addContainer2">
                 <form @submit.prevent="addFood" id="AddNewFood"> 
@@ -48,6 +54,7 @@ import glImage from "../assets/groceryList-Normal.png"
 import acornLeft from "../assets/acorn-left01.png"
 import acornRight from "../assets/acorn-right01.png"
 import scrappy from "../assets/chipmunkFront01.png"
+import scrappy02 from "../assets/05.gif"
 
 export default {
     name: "AddFood",
@@ -57,6 +64,7 @@ export default {
             acornLeft: acornLeft,
             acornRight: acornRight,
             scrappy: scrappy,
+            scrappy02: scrappy02,
             posts: [],
             error: '',
             name: ''
@@ -121,6 +129,11 @@ export default {
                     // clears form
                     this.name = '';
                     // this.quantity = '';
+                    TweenMax.to('#scrappyImage', 0, { opacity: 0 })
+                    TweenMax.to('#scrappy02Image', 0, { opacity: 1 })
+                    TweenMax.to('#scrappy02Image', 1.5, { x: '200px' })
+                    TweenMax.to('#scrappyImage', 0, { opacity: 1, delay: 1.5 })
+                    TweenMax.to('#scrappy02Image', 0, { x: 0, opacity: 0, delay: 1.5 })
                 },
                 async searchFood(){
                     await PostService.insertSearch(this.name);
@@ -173,7 +186,7 @@ export default {
 #scrappyContainer{
     position: absolute;
     width: 100%;
-    top: 40%;
+    top: 39%;
     text-align: center;
 }
 
@@ -186,6 +199,25 @@ export default {
     float: left;
     width: 50px;
     height: 75px;
+}
+
+#scrappy02Container{
+    position: absolute;
+    width: 100%;
+    top: 36%;
+    text-align: center;
+}
+
+#scrappy02Container02{
+    width: 325px;
+    margin: 0px auto;
+}
+
+#scrappy02Image{
+    float: left;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
 }
 
 #addContainer{
