@@ -4,7 +4,12 @@
             <div id="sphereContainer2">
             <img :src="acornLeft" id="sphereOne">
             <img :src="acornRight" id="sphereTwo">
-            <img :src="scrappyHead" id="scrappyHead">
+            </div>
+        </div>
+
+        <div id="headContainer">
+            <div id="headContainer2">
+                <img :src="scrappyHead" id="scrappyHead">
             </div>
         </div>
 
@@ -81,6 +86,8 @@ export default {
         TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 1, delay: 1.75})
         TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 1, delay: 1.75})
         TweenMax.to("#sphereContainer", 1, { opacity: 1, y: 0, delay: 2})
+
+        
 
         TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 15, rotation:  10, delay: 2.5})
         TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 10, rotation: -10, delay: 2.5})
@@ -182,8 +189,23 @@ export default {
     opacity: 0;
 }
 
+#headContainer{
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+    padding-left: 40px;
+}
+
+#headContainer2{
+    width: 200px;
+    margin: 0px auto;
+}
+
 #scrappyHead{
-    
+    float: left;
+    width: 200px;
+    height: 200px;
 }
 
 #scrappyContainer{
