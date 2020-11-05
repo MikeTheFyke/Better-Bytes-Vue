@@ -126,6 +126,10 @@ export default {
                     TweenMax.to('#scrappyContainer', 0, { zIndex: 5 })
                     TweenMax.to('#scrappyImage', 0, { opacity: 1 })
                     TweenMax.to('#scrappyImage', 1, { x: '200px' })
+
+                    TweenMax.to('#scrappyContainer', 0, { zIndex: -1, delay: 1 })
+                    TweenMax.to('#scrappyImage', 0, { opacity: 0, delay: 1 })
+                    TweenMax.to('#scrappyImage', 0, { x: 0, delay: 1 })
                 },
                 async searchFood(){
                     await PostService.insertSearch(this.name);
