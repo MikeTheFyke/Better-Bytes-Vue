@@ -13,12 +13,6 @@
             </div>
         </div>
 
-        <div id="scrappy02Container">
-            <div id="scrappy02Container02">
-                <img id="scrappy02Image" :src="scrappy02">
-            </div>
-        </div>
-
         <div id="addContainer">
             <div id="addContainer2">
                 <form @submit.prevent="addFood" id="AddNewFood"> 
@@ -53,8 +47,7 @@ import TweenMax  from 'greensock';
 import glImage from "../assets/groceryList-Normal.png"
 import acornLeft from "../assets/acorn-left01.png"
 import acornRight from "../assets/acorn-right01.png"
-import scrappy from "../assets/chipmunkFront01.png"
-import scrappy02 from "../assets/05.gif"
+import scrappy from "../assets/05.gif"
 
 export default {
     name: "AddFood",
@@ -64,7 +57,6 @@ export default {
             acornLeft: acornLeft,
             acornRight: acornRight,
             scrappy: scrappy,
-            scrappy02: scrappy02,
             posts: [],
             error: '',
             name: ''
@@ -203,25 +195,6 @@ export default {
     height: 75px;
     transform: scaleY(0);
     transform-origin: bottom;
-}
-
-#scrappy02Container{
-    position: absolute;
-    width: 100%;
-    top: 36%;
-    text-align: center;
-}
-
-#scrappy02Container02{
-    width: 325px;
-    margin: 0px auto;
-}
-
-#scrappy02Image{
-    float: left;
-    width: 100px;
-    height: 100px;
-    opacity: 0;
 }
 
 #addContainer{
