@@ -34,13 +34,14 @@ export default {
     position: absolute;
     top: -100px;
     background: transparent;
-    color: #fff;
+    color: #4fa861;;
     text-align: center;
     width: 100%;
 }
 
 h1{
     font-family: "BigBottom";
+    font-size: 40px;
 
 }
 
