@@ -31,18 +31,21 @@ export default {
             mouseY = e.clientY;
             console.log(mouseX)
             if ( mouseX >= window.innerWidth/2 + 20){
-                TweenMax.to("#scrappyEyes", 0, { x: '10px' })
+                TweenMax.to("#scrappyEyes", 0, { x: '5px' })
             }
             else if ( mouseX <= window.innerWidth/2 ){
-                TweenMax.to("#scrappyEyes", 0, { x: '-10px' })
+                TweenMax.to("#scrappyEyes", 0, { x: '-5px' })
             } 
             else {
                 TweenMax.to("#scrappyEyes", 0, { x: mouseX - 400 })
             }
 
-            if ( mouseY < window.innerHeight/2 - 125 ) {
+            if ( mouseY < window.innerHeight/2 - 125 && mouseY > window.innerHeight/2 - 135 ) {
                 TweenMax.to("#scrappyEyes", 0, { y: mouseY - 280 })
             } 
+            else if ( mouseY <= window.innerHeight/2 - 135 ) {
+                TweenMax.to("#scrappyEyes", 0, { y: "-17px" })
+            }
             else if ( mouseY >= window.innerHeight/2 - 125 ) {
                 TweenMax.to("#scrappyEyes", 0, { y: 0 })
             }
