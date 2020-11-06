@@ -7,6 +7,11 @@
         </div>
     </div>
 
+        <div id="cheeksContainer">
+        <div id="cheeksContainer2">
+            <img :src="scrappyCheeks" id="scrappyCheeks">
+        </div>
+    </div>
 
     </div>
 </template>
@@ -14,12 +19,14 @@
 <script>
 import TweenMax  from 'greensock';
 import scrappyPupils from "../assets/scrappy-head-pupils.png"
+import scrappyCheeks from "../assets/scrappy-head-cheeks.png"
 
 export default {
     name: "Scrappy",
     data(){
         return{
-            scrappyPupils: scrappyPupils
+            scrappyPupils: scrappyPupils,
+            scrappyCheeks: scrappyCheeks
         }
     },
     mounted: function(){
@@ -76,4 +83,22 @@ export default {
     height: 200px;
 }
 
+#cheeksContainer{
+    position: absolute;
+    top: 20.5%;
+    width: 100%;
+    text-align: center;
+    padding-left: 60px;
+}
+
+#cheeksContainer2{
+    width: 240px;
+    margin: 0px auto;
+}
+
+#scrappyCheeks{
+    float: left;
+    width: 200px;
+    height: 200px;
+}
 </style>
