@@ -33,11 +33,14 @@ export default {
         var mouseX;
         var mouseY;
 
+        TweenMax.to("#scrappyCheeks", 0, {opacity: 1, delay: 3})
+        TweenMax.to("#scrappyEyes", 0, {opacity: 1, delay: 3})
+
         onmousemove = function(e){
             mouseX = e.clientX;
             mouseY = e.clientY;
             console.log(mouseX)
-            if ( mouseX >= window.innerWidth/2 + 20){
+            if ( mouseX >= window.innerWidth/2 + 19){
                 TweenMax.to("#scrappyEyes", 0, { x: '5px' })
             }
             else if ( mouseX <= window.innerWidth/2 ){
@@ -51,7 +54,7 @@ export default {
                 TweenMax.to("#scrappyEyes", 0, { y: mouseY - 280 })
             } 
             else if ( mouseY <= window.innerHeight/2 - 135 ) {
-                TweenMax.to("#scrappyEyes", 0, { y: "-17px" })
+                TweenMax.to("#scrappyEyes", 0, { y: "-16px" })
             }
             else if ( mouseY >= window.innerHeight/2 - 125 ) {
                 TweenMax.to("#scrappyEyes", 0, { y: 0 })
@@ -81,6 +84,7 @@ export default {
     float: left;
     width: 200px;
     height: 200px;
+    opacity: 0;
 }
 
 #cheeksContainer{
@@ -92,13 +96,14 @@ export default {
 }
 
 #cheeksContainer2{
-    width: 240px;
+    width: 255px;
     margin: 0px auto;
 }
 
 #scrappyCheeks{
     float: left;
-    width: 200px;
+    width: 220px;
     height: 200px;
+    opacity: 0;
 }
 </style>

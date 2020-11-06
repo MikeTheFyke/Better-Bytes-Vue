@@ -20,6 +20,12 @@
             </div>
         </div>
 
+        <div id="noEyesContainer">
+            <div id="noEyesContainer2">
+                <img :src="scrappyNoEyes" id="scrappyNoEyes">
+            </div>
+        </div>
+
         <div id="addContainer">
             <div id="addContainer2">
                 <form @submit.prevent="addFood" id="AddNewFood"> 
@@ -62,7 +68,8 @@ import glImage from "../assets/groceryList-Normal.png"
 import acornLeft from "../assets/acorn-left01.png"
 import acornRight from "../assets/acorn-right01.png"
 import scrappy from "../assets/05.gif"
-import scrappyHead from "../assets/scrappy-head-noeyes.png"
+import scrappyHead from "../assets/scrappy-head.png"
+import scrappyNoEyes from "../assets/scrappy-head-noeyes.png"
 import scrappyLeftHand from "../assets/scrappy-leftHand.png"
 import scrappyRightHand from "../assets/scrappy-rightHand.png"
 
@@ -74,9 +81,10 @@ export default {
             acornLeft: acornLeft,
             acornRight: acornRight,
             scrappy: scrappy,
-            scrappyHead : scrappyHead,
+            scrappyNoEyes : scrappyNoEyes,
             scrappyLeftHand : scrappyLeftHand,
             scrappyRightHand : scrappyRightHand,
+            scrappyHead : scrappyHead,
             posts: [],
             error: '',
             name: ''
@@ -99,10 +107,17 @@ export default {
         TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 1, delay: 1.75})
         TweenMax.to("#sphereContainer", 1, { opacity: 1, y: 0, delay: 2})
 
-        TweenMax.to("#headContainer", 0, {opacity: 0, y:'-300vh'})
-        TweenMax.to("#scrappyHead", 1, {scale: 100, delay: 1.75})
-        TweenMax.to("#headContainer", 1, {opacity: 1, y:'350px', delay: 1.75})
-        TweenMax.to("#headContainer", 0.5, {opacity: 1, y:0, delay: 2.25})
+        TweenMax.to("#headContainer", 0, { opacity: 0, y:'-300vh'})
+        TweenMax.to("#scrappyHead", 1, { scale: 100, delay: 1.75})
+        TweenMax.to("#headContainer", 1, { opacity: 1, y:'350px', delay: 1.75})
+        TweenMax.to("#headContainer", 0.5, { y:0, delay: 2.5})
+        TweenMax.to("#headContainer", 0, { opacity: 0, delay: 3})
+
+        TweenMax.to("#noEyesContainer", 0, { opacity: 0, y:'-300vh'})
+        TweenMax.to("#scrappyNoEyes", 1, { scale: 100, delay: 1.75})
+        TweenMax.to("#noEyesContainer", 1, { opacity: 0, y:'350px', delay: 1.75})
+        TweenMax.to("#noEyesContainer", 0.5, { y:0, delay: 2.5})
+        TweenMax.to("#noEyesContainer", 0, { opacity: 1, delay: 3})
 
         TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 15, rotation:  10, delay: 2.5})
         TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 10, rotation: -10, delay: 2.5})
@@ -227,6 +242,25 @@ export default {
 }
 
 #scrappyHead{
+    float: left;
+    width: 2px;
+    height: 2px;
+}
+
+#noEyesContainer{
+    position: absolute;
+    top: 33%;
+    width: 100%;
+    text-align: center;
+    padding-left: 60px;
+}
+
+#noEyesContainer2{
+    width: 40px;
+    margin: 0px auto;
+}
+
+#scrappyNoEyes{
     float: left;
     width: 2px;
     height: 2px;
