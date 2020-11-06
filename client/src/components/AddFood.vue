@@ -211,7 +211,7 @@ form{
     width: 400px;
     margin: 0px auto;
     background-color: #2f693b;
-    border-color: white;
+    border-color: #2f693b;
     border-style: solid;
     border-radius: 15px;
     border-width: 4px;
@@ -250,10 +250,6 @@ form{
 
 .food-item:nth-child(even){
     background-color: #c5c9c6;
-}
-
-.is-complete{
-    text-decoration: line-through;
 }
 
 .del{
