@@ -1,18 +1,5 @@
 <template>
     <div>
-        <div id="handContainer">
-            <div id="handContainer2">
-                <img :src="scrappyRightHand" id="scrappyRight">
-                <img :src="scrappyLeftHand" id="scrappyLeft">
-            </div>
-        </div>
-
-        <div id="sphereContainer">
-            <div id="sphereContainer2">
-            <img :src="acornLeft" id="sphereOne">
-            <img :src="acornRight" id="sphereTwo">
-            </div>
-        </div>
 
         <div id="addContainer">
             <div id="addContainer2">
@@ -53,22 +40,14 @@
 import PostService from '../PostService'
 import TweenMax  from 'greensock';
 import glImage from "../assets/groceryList-Normal.png"
-import acornLeft from "../assets/acorn-left01.png"
-import acornRight from "../assets/acorn-right01.png"
 import scrappy from "../assets/05.gif"
-import scrappyLeftHand from "../assets/scrappy-leftHand.png"
-import scrappyRightHand from "../assets/scrappy-rightHand.png"
 
 export default {
     name: "AddFood",
     data(){
         return{
             glImage: glImage,
-            acornLeft: acornLeft,
-            acornRight: acornRight,
             scrappy: scrappy,
-            scrappyLeftHand : scrappyLeftHand,
-            scrappyRightHand : scrappyRightHand,
             posts: [],
             error: '',
             name: ''
@@ -83,21 +62,6 @@ export default {
         }
     },
     mounted: function() {
-        TweenMax.to("#sphereContainer", 0.25, { opacity: 1, y: '-300h'})
-        TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 1, delay: 1.75})
-        TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 1, delay: 1.75})
-        TweenMax.to("#sphereContainer", 1, { opacity: 1, y: 0, delay: 2})
-
-        TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 15, rotation:  10, delay: 2.5})
-        TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 10, rotation: -10, delay: 2.5})
-        TweenMax.to("#sphereOne", 1, { rotation: -10, delay: 3.5})
-        TweenMax.to("#sphereTwo", 1, { rotation:  10, delay: 3.5})
-
-        TweenMax.to("#scrappyLeft",  1, { y: '50px', delay: 2.5 })
-        TweenMax.to("#scrappyRight", 1, { y: '50px', delay: 2.5 })
-
-        TweenMax.to("#scrappyLeft",  1, { opacity: 1, y: '20px', scale: 2, rotation: 10, delay: 3.5 })
-        TweenMax.to("#scrappyRight", 1, { opacity: 1, y: 0, x:'20px', scale: 2, rotation: -10, delay: 3.5 })
 
         TweenMax.to("#AddNewFood", 0.50, { x:'-200vw'});
         TweenMax.to("#AddNewFood", 0.50, { opacity: 1, x:0, delay: 3});
@@ -158,58 +122,6 @@ export default {
 </script>
 
 <style scoped>
-
-#sphereContainer{
-    position: absolute;
-    top: 48%;
-    width: 100%;
-    text-align: center;
-    padding-left: 40px;
-}
-
-#sphereContainer2{
-    width: 200px;
-    margin: 0px auto;
-}
-
-#sphereOne{
-    float: left;
-    width: 20px;
-    height: 20px;
-    opacity: 0;
-}
-
-#sphereTwo{
-    float: right;
-    width: 20px;
-    height: 20px;
-    opacity: 0;
-}
-
-#handContainer{
-    position: absolute;
-    top: 38%;
-    width: 100%;
-}
-
-#handContainer2{
-    width: 350px;
-    margin: 0px auto;
-}
-
-#scrappyRight{
-    float: left;
-    width: 50px;
-    height: 50px;
-    opacity: 0; 
-}
-
-#scrappyLeft{
-    float: right;
-    width: 50px;
-    height: 50px;
-    opacity: 0;
-}
 
 #scrappyContainer{
     position: absolute;

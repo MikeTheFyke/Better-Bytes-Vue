@@ -1,6 +1,20 @@
 <template>
     <div>
 
+    <div id="handContainer">
+        <div id="handContainer2">
+            <img :src="scrappyRightHand" id="scrappyRight">
+            <img :src="scrappyLeftHand" id="scrappyLeft">
+        </div>
+    </div>
+
+    <div id="sphereContainer">
+        <div id="sphereContainer2">
+        <img :src="acornLeft" id="sphereOne">
+        <img :src="acornRight" id="sphereTwo">
+        </div>
+    </div>
+
     <div id="headContainer">
         <div id="headContainer2">
             <img :src="scrappyHead" id="scrappyHead">
@@ -35,6 +49,10 @@ import scrappyPupils from "../assets/scrappy-head-pupils.png"
 import scrappyCheeks from "../assets/scrappy-head-cheeks.png"
 import scrappyHead from "../assets/scrappy-head.png"
 import scrappyNoEyes from "../assets/scrappy-head-noeyes.png"
+import scrappyLeftHand from "../assets/scrappy-leftHand.png"
+import scrappyRightHand from "../assets/scrappy-rightHand.png"
+import acornLeft from "../assets/acorn-left01.png"
+import acornRight from "../assets/acorn-right01.png"
 
 export default {
     name: "Scrappy",
@@ -44,6 +62,10 @@ export default {
             scrappyCheeks: scrappyCheeks,
             scrappyHead : scrappyHead,
             scrappyNoEyes : scrappyNoEyes,
+            scrappyLeftHand : scrappyLeftHand,
+            scrappyRightHand : scrappyRightHand,
+            acornLeft: acornLeft,
+            acornRight: acornRight,
         }
     },
     mounted: function(){
@@ -62,6 +84,21 @@ export default {
         TweenMax.to("#noEyesContainer", 0.5, { y:0, delay: 2.5})
         TweenMax.to("#noEyesContainer", 0, { opacity: 1, delay: 3})
 
+        TweenMax.to("#sphereContainer", 0.25, { opacity: 1, y: '-300h'})
+        TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 1, delay: 1.75})
+        TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 1, delay: 1.75})
+        TweenMax.to("#sphereContainer", 1, { opacity: 1, y: 0, delay: 2})
+
+        TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 15, rotation:  10, delay: 2.5})
+        TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 10, rotation: -10, delay: 2.5})
+        TweenMax.to("#sphereOne", 1, { rotation: -10, delay: 3.5})
+        TweenMax.to("#sphereTwo", 1, { rotation:  10, delay: 3.5})
+
+        TweenMax.to("#scrappyLeft",  1, { y: '50px', delay: 2.5 })
+        TweenMax.to("#scrappyRight", 1, { y: '50px', delay: 2.5 })
+
+        TweenMax.to("#scrappyLeft",  1, { opacity: 1, y: '20px', scale: 2, rotation: 10, delay: 3.5 })
+        TweenMax.to("#scrappyRight", 1, { opacity: 1, y: 0, x:'20px', scale: 2, rotation: -10, delay: 3.5 })
 
         TweenMax.to("#scrappyCheeks", 0, {opacity: 1, delay: 3})
         TweenMax.to("#scrappyEyes", 0, {opacity: 1, delay: 3})
@@ -172,6 +209,58 @@ export default {
     float: left;
     width: 220px;
     height: 200px;
+    opacity: 0;
+}
+
+#sphereContainer{
+    position: absolute;
+    top: 48%;
+    width: 100%;
+    text-align: center;
+    padding-left: 40px;
+}
+
+#sphereContainer2{
+    width: 200px;
+    margin: 0px auto;
+}
+
+#sphereOne{
+    float: left;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+}
+
+#sphereTwo{
+    float: right;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+}
+
+#handContainer{
+    position: absolute;
+    top: 38%;
+    width: 100%;
+}
+
+#handContainer2{
+    width: 350px;
+    margin: 0px auto;
+}
+
+#scrappyRight{
+    float: left;
+    width: 50px;
+    height: 50px;
+    opacity: 0; 
+}
+
+#scrappyLeft{
+    float: right;
+    width: 50px;
+    height: 50px;
     opacity: 0;
 }
 </style>
