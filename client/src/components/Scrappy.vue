@@ -1,5 +1,18 @@
 <template>
     <div>
+
+    <div id="headContainer">
+        <div id="headContainer2">
+            <img :src="scrappyHead" id="scrappyHead">
+        </div>
+    </div>
+
+    <div id="noEyesContainer">
+        <div id="noEyesContainer2">
+            <img :src="scrappyNoEyes" id="scrappyNoEyes">
+        </div>
+    </div>
+
     
     <div id="pupilsContainer">
         <div id="pupilsContainer2">
@@ -20,18 +33,35 @@
 import TweenMax  from 'greensock';
 import scrappyPupils from "../assets/scrappy-head-pupils.png"
 import scrappyCheeks from "../assets/scrappy-head-cheeks.png"
+import scrappyHead from "../assets/scrappy-head.png"
+import scrappyNoEyes from "../assets/scrappy-head-noeyes.png"
 
 export default {
     name: "Scrappy",
     data(){
         return{
             scrappyPupils: scrappyPupils,
-            scrappyCheeks: scrappyCheeks
+            scrappyCheeks: scrappyCheeks,
+            scrappyHead : scrappyHead,
+            scrappyNoEyes : scrappyNoEyes,
         }
     },
     mounted: function(){
         var mouseX;
         var mouseY;
+
+        TweenMax.to("#headContainer", 0, { opacity: 0, y:'-300vh'})
+        TweenMax.to("#scrappyHead", 1, { scale: 100, delay: 1.75})
+        TweenMax.to("#headContainer", 1, { opacity: 1, y:'350px', delay: 1.75})
+        TweenMax.to("#headContainer", 0.5, { y:0, delay: 2.5})
+        TweenMax.to("#headContainer", 0, { opacity: 0, delay: 3})
+
+        TweenMax.to("#noEyesContainer", 0, { opacity: 0, y:'-300vh'})
+        TweenMax.to("#scrappyNoEyes", 1, { scale: 100, delay: 1.75})
+        TweenMax.to("#noEyesContainer", 1, { opacity: 0, y:'350px', delay: 1.75})
+        TweenMax.to("#noEyesContainer", 0.5, { y:0, delay: 2.5})
+        TweenMax.to("#noEyesContainer", 0, { opacity: 1, delay: 3})
+
 
         TweenMax.to("#scrappyCheeks", 0, {opacity: 1, delay: 3})
         TweenMax.to("#scrappyEyes", 0, {opacity: 1, delay: 3})
@@ -66,6 +96,44 @@ export default {
 </script>
 
 <style scoped>
+
+#headContainer{
+    position: absolute;
+    top: 33%;
+    width: 100%;
+    text-align: center;
+    padding-left: 60px;
+}
+
+#headContainer2{
+    width: 40px;
+    margin: 0px auto;
+}
+
+#scrappyHead{
+    float: left;
+    width: 2px;
+    height: 2px;
+}
+
+#noEyesContainer{
+    position: absolute;
+    top: 33%;
+    width: 100%;
+    text-align: center;
+    padding-left: 60px;
+}
+
+#noEyesContainer2{
+    width: 40px;
+    margin: 0px auto;
+}
+
+#scrappyNoEyes{
+    float: left;
+    width: 2px;
+    height: 2px;
+}
 
 #pupilsContainer{
     position: absolute;

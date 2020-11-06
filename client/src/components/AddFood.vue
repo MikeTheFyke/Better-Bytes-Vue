@@ -14,18 +14,6 @@
             </div>
         </div>
 
-        <div id="headContainer">
-            <div id="headContainer2">
-                <img :src="scrappyHead" id="scrappyHead">
-            </div>
-        </div>
-
-        <div id="noEyesContainer">
-            <div id="noEyesContainer2">
-                <img :src="scrappyNoEyes" id="scrappyNoEyes">
-            </div>
-        </div>
-
         <div id="addContainer">
             <div id="addContainer2">
                 <form @submit.prevent="addFood" id="AddNewFood"> 
@@ -68,8 +56,6 @@ import glImage from "../assets/groceryList-Normal.png"
 import acornLeft from "../assets/acorn-left01.png"
 import acornRight from "../assets/acorn-right01.png"
 import scrappy from "../assets/05.gif"
-import scrappyHead from "../assets/scrappy-head.png"
-import scrappyNoEyes from "../assets/scrappy-head-noeyes.png"
 import scrappyLeftHand from "../assets/scrappy-leftHand.png"
 import scrappyRightHand from "../assets/scrappy-rightHand.png"
 
@@ -81,16 +67,11 @@ export default {
             acornLeft: acornLeft,
             acornRight: acornRight,
             scrappy: scrappy,
-            scrappyNoEyes : scrappyNoEyes,
             scrappyLeftHand : scrappyLeftHand,
             scrappyRightHand : scrappyRightHand,
-            scrappyHead : scrappyHead,
             posts: [],
             error: '',
             name: ''
-            // ,
-            // price: '$0.00',
-            // quantity: ''
         }
     },
     // created ia a life cycle method
@@ -106,18 +87,6 @@ export default {
         TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 1, delay: 1.75})
         TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 1, delay: 1.75})
         TweenMax.to("#sphereContainer", 1, { opacity: 1, y: 0, delay: 2})
-
-        TweenMax.to("#headContainer", 0, { opacity: 0, y:'-300vh'})
-        TweenMax.to("#scrappyHead", 1, { scale: 100, delay: 1.75})
-        TweenMax.to("#headContainer", 1, { opacity: 1, y:'350px', delay: 1.75})
-        TweenMax.to("#headContainer", 0.5, { y:0, delay: 2.5})
-        TweenMax.to("#headContainer", 0, { opacity: 0, delay: 3})
-
-        TweenMax.to("#noEyesContainer", 0, { opacity: 0, y:'-300vh'})
-        TweenMax.to("#scrappyNoEyes", 1, { scale: 100, delay: 1.75})
-        TweenMax.to("#noEyesContainer", 1, { opacity: 0, y:'350px', delay: 1.75})
-        TweenMax.to("#noEyesContainer", 0.5, { y:0, delay: 2.5})
-        TweenMax.to("#noEyesContainer", 0, { opacity: 1, delay: 3})
 
         TweenMax.to("#sphereOne", 1, { opacity: 1, scale: 15, rotation:  10, delay: 2.5})
         TweenMax.to("#sphereTwo", 1, { opacity: 1, scale: 10, rotation: -10, delay: 2.5})
@@ -160,18 +129,7 @@ export default {
                 async addFood() {
                     await PostService.insertPost(this.name, this.quantity);
                     this.posts = await PostService.getPosts();
-                    // constructing newly added food.
-                    // const newFood = {
-                    //     // id: v4(),
-                    //     name: this.name,
-                    //     price: "$0.00",
-                    //     completed: false
-                    // }
-                    // send up to parent
-                    // this.$emit('add-food', newFood);
-                    // clears form
                     this.name = '';
-                    // this.quantity = '';
                     TweenMax.to('#scrappyContainer', 0, { zIndex: 5 })
                     TweenMax.to('#scrappyImage', 0, { opacity: 1 })
                     TweenMax.to('#scrappyImage', 1, { x: '200px' })
@@ -226,44 +184,6 @@ export default {
     width: 20px;
     height: 20px;
     opacity: 0;
-}
-
-#headContainer{
-    position: absolute;
-    top: 33%;
-    width: 100%;
-    text-align: center;
-    padding-left: 60px;
-}
-
-#headContainer2{
-    width: 40px;
-    margin: 0px auto;
-}
-
-#scrappyHead{
-    float: left;
-    width: 2px;
-    height: 2px;
-}
-
-#noEyesContainer{
-    position: absolute;
-    top: 33%;
-    width: 100%;
-    text-align: center;
-    padding-left: 60px;
-}
-
-#noEyesContainer2{
-    width: 40px;
-    margin: 0px auto;
-}
-
-#scrappyNoEyes{
-    float: left;
-    width: 2px;
-    height: 2px;
 }
 
 #handContainer{
