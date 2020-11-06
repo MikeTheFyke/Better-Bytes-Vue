@@ -90,32 +90,32 @@ export default {
 
     },
     methods: {
-                async addFood() {
-                    await PostService.insertPost(this.name, this.quantity);
-                    this.posts = await PostService.getPosts();
-                    this.name = '';
-                    TweenMax.to('#scrappyContainer', 0, { zIndex: 5 })
-                    TweenMax.to('#scrappyImage', 0, { opacity: 1 })
-                    TweenMax.to('#scrappyImage', 1, { x: '200px' })
+            async addFood() {
+                await PostService.insertPost(this.name, this.quantity);
+                this.posts = await PostService.getPosts();
+                this.name = '';
+                TweenMax.to('#scrappyContainer', 0, { zIndex: 5 })
+                TweenMax.to('#scrappyImage', 0, { opacity: 1 })
+                TweenMax.to('#scrappyImage', 1, { x: '200px' })
 
-                    TweenMax.to('#scrappyContainer', 0, { zIndex: -1, delay: 1 })
-                    TweenMax.to('#scrappyImage', 0, { opacity: 0, delay: 1 })
-                    TweenMax.to('#scrappyImage', 0, { x: 0, delay: 1 })
-                },
-                async searchFood(){
-                    await PostService.insertSearch(this.name);
-                    this.searched = await PostService.getSearch();
-                },
-                async deleteFood(id) {
-                    await PostService.deletePost(id);
-                    this.posts = await PostService.getPosts();
-                },
-                viewGrocery(){
-                    TweenMax.to('#groceryListContainer', 0.5, { scaleY: 1, scaleX: 1, opacity: 1, zIndex: 4})
-                },
-                closeGrocery(){
-                    TweenMax.to('#groceryListContainer', 0.5, { scaleY: 0, scaleX: 0, opacity: 0, zIndex: 0})
-                }
+                TweenMax.to('#scrappyContainer', 0, { zIndex: -1, delay: 1 })
+                TweenMax.to('#scrappyImage', 0, { opacity: 0, delay: 1 })
+                TweenMax.to('#scrappyImage', 0, { x: 0, delay: 1 })
+            },
+            async searchFood(){
+                await PostService.insertSearch(this.name);
+                this.searched = await PostService.getSearch();
+            },
+            async deleteFood(id) {
+                await PostService.deletePost(id);
+                this.posts = await PostService.getPosts();
+            },
+            viewGrocery(){
+                TweenMax.to('#groceryListContainer', 0.5, { scaleY: 1, scaleX: 1, opacity: 1, zIndex: 4})
+            },
+            closeGrocery(){
+                TweenMax.to('#groceryListContainer', 0.5, { scaleY: 0, scaleX: 0, opacity: 0, zIndex: 0})
+            }
     }
 }
 

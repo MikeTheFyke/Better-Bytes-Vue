@@ -114,7 +114,7 @@ export default {
                 TweenMax.to("#scrappyEyes", 0, { x: '-5px' })
             } 
             else {
-                TweenMax.to("#scrappyEyes", 0, { x: mouseX - 400 })
+                TweenMax.to("#scrappyEyes", 0, { x: mouseX - window.innerWidth/2 })
             }
 
             if ( mouseY < window.innerHeight/2 - 125 && mouseY > window.innerHeight/2 - 135 ) {
